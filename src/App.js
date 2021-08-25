@@ -11,7 +11,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/login" component={() => <Login authorized={token}/>} />
-          <Route exact path="/home" component={() => <Home authorized={token}/>} />
+          <Route exact path="/" component={() => <Home authorized={token}/>} />
         </Switch>
       </Router>
     </div>

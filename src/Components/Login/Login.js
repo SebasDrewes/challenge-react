@@ -5,7 +5,7 @@ import { Formik, Field, Form } from "formik";
 const Login = ({authorized}) => {
     // si ya esta logeado, carga home
     if(authorized){
-      return <Redirect to="/home" />
+      return <Redirect to="/" />
     }
 
     //validate form functions
