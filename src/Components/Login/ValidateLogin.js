@@ -1,13 +1,11 @@
-import { useState } from 'react'
 import axios from 'axios';
 
-const ValidateLogin = async (credentials) => {
+const ValidateLogin = async (credentials, history) => {
     try {
-        console.log(credentials)
     const response = await axios.post('http://challenge-react.alkemy.org/', credentials)
     const token = response.data.token
     localStorage.setItem('token', token)
-    console.log(token)
+    history.push('/home')
     } catch (error) {
       console.error(error)
     }

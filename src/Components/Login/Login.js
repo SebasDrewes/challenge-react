@@ -1,7 +1,14 @@
 import ValidateLogin from './ValidateLogin'
+import { Redirect, useHistory } from 'react-router-dom'
 import { Formik, Field, Form } from "formik";
 
-const Login = () => {
+const Login = ({authorized}) => {
+    const history = useHistory();
+    
+    if(authorized){
+      return <Redirect to="/home" />
+    }
+
     function validateEmail(value) {
         let error;
         if (!value) {
@@ -18,12 +25,13 @@ const Login = () => {
         }
         return error
     }
+
     return (
         <div className="App">
         <h1>Sign in</h1>
         <Formik
           initialValues={{ email: "", password: "" }}
-          onSubmit={(values) => {ValidateLogin(values)}}
+          onSubmit={(values) => {ValidateLogin(values, history)}}
         >
           {({ errors, touched }) => (<Form>
           <div className="mb-3">
