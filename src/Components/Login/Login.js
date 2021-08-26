@@ -1,6 +1,7 @@
 import ValidateLogin from './ValidateLogin'
 import { Redirect} from 'react-router-dom'
 import { Formik, Field, Form } from "formik";
+import './Login.css';
 
 const Login = ({authorized}) => {
     // si ya esta logeado, carga home
@@ -27,15 +28,15 @@ const Login = ({authorized}) => {
     }
 
     return (
-        <div className="App">
-        <h1>Sign in</h1>
+      <div id="form">
+        <h1>React Challenge</h1>
         <Formik
           initialValues={{ email: "", password: "" }}
           onSubmit={(values) => {ValidateLogin(values)}}
         >
           {({ errors, touched }) => (<Form>
           <div className="mb-3">
-           <label htmlFor="email" className="form-label">Email address</label>
+           <label htmlFor="email" className="form-label">Email</label>
             <Field name="email" type="email" className="form-control" validate={validateEmail}/>
             {errors.email && touched.email ? <div>{errors.email}</div> : null}
             </div>
@@ -44,7 +45,7 @@ const Login = ({authorized}) => {
             <Field name="password" type="password" className="form-control" validate={validatePassword}/>
             {errors.password && touched.password ? <div>{errors.password}</div> : null}
             </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="submit" className="btn btn-dark">Ingresar</button>
           </Form>
           )}
         </Formik>
