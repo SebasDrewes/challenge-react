@@ -5,12 +5,11 @@ img {
     width: 150px;
     height: 150px;
 }
-#flex {
-    display: flex;
-    flex-direction: row;
-    overflow: scroll;
-}
-.flexColumn {
+.heroCard {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid white;
 }

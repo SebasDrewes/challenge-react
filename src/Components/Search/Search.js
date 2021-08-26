@@ -18,9 +18,10 @@ const Search = ({authorized}) => {
 const displaySearchHeroes = () => {
     console.log(heroes)
     const fetchedHeroes = [];
+    if(heroes !== undefined)
     for (let i = 0; i < heroes.length; i += 1) {
         fetchedHeroes.push(
-            <div key={heroes[i].id} className="flexColumn">
+            <div key={heroes[i].id} className="col heroCard"> 
                 <h1>{heroes[i].name}</h1>
                 <img src={heroes[i].image.url} alt={heroes[i].name}/>
                 <button>Add Hero</button>
@@ -44,7 +45,7 @@ const displaySearchHeroes = () => {
               <button type="submit" className="btn btn-dark">Ingresar</button>
             </Form>
           </Formik>
-          <div id="flex">
+          <div className="row">
           {displaySearchHeroes()}
           </div>
         </div>
