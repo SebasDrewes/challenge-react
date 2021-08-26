@@ -1,13 +1,9 @@
 import { useState } from 'react'
-import { Redirect} from 'react-router-dom'
 import { Formik, Field, Form } from "formik";
 import axios from 'axios';
 import './Search.css'
-const Search = ({authorized}) => {
+const Search = ({team, setTeam}) => {
     const [heroes, setHeroes] = useState([])
-
-    if(!authorized){
-    return <Redirect to="/login" /> }
 
   const searchHero = async (value) => {
     if (value){
@@ -15,8 +11,11 @@ const Search = ({authorized}) => {
     setHeroes(results.data.results)
 }
 }
+const addHero = (e, hero) => {
+  e.preventDefault();
+  setTeam(team => [...team, hero])
+}
 const displaySearchHeroes = () => {
-    console.log(heroes)
     const fetchedHeroes = [];
     if(heroes !== undefined)
     for (let i = 0; i < heroes.length; i += 1) {
@@ -24,7 +23,7 @@ const displaySearchHeroes = () => {
             <div key={heroes[i].id} className="col heroCard"> 
                 <h1>{heroes[i].name}</h1>
                 <img src={heroes[i].image.url} alt={heroes[i].name}/>
-                <button>Add Hero</button>
+                <button onClick={(e) => addHero(e, heroes[i])}>Add Hero</button>
             </div>
         )
     }
