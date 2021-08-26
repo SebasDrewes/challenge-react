@@ -1,0 +1,16 @@
+body {
+    color: white;
+}
+img {
+    width: 150px;
+    height: 150px;
+}
+#flex {
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+}
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
