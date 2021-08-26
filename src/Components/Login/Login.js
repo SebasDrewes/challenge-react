@@ -13,16 +13,16 @@ const Login = ({authorized}) => {
     const validateEmail = (value) => {
         let error;
         if (!value) {
-          error = 'Required';
+          error = 'Requerido';
         } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-          error = 'Invalid email address';
+          error = 'Email invalido';
         }
         return error;
       }
     const validatePassword = (value) => {
         let error;
         if(!value) {
-            error = 'Required';
+            error = 'Requerido';
         }
         return error
     }
