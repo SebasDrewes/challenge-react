@@ -1,20 +1,53 @@
-.form-control:focus {
-    border-color: #3d3a3a;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(37, 37, 37, 0.6);
-  }
-#form {
-   display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    min-height: 100%;
-    height: auto;
-    top:0px;
-    left:0px;
-    color: white;
-    background-color: rgba(0,0,0,0.5) !important;
+@-webkit-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
 
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+body {
+  background: url('./superhero-background.jpeg') no-repeat center fixed;
+  background-color: rgb(0, 0, 0);     
+  background-size: cover;
+}
+.form-control:focus {
+  border-color: #3d3a3a;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(37, 37, 37, 0.6);
+}
+#form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  top:0px;
+  left:0px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+.form-label {
+  font-size: 1.5em;
+}
+#title {
+  font-size: 5em;
+}
+.alert{
+  background-color: rgba(139, 60, 60, 0.9);
+  text-align: center;
+  border: none;
+
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  animation-name: fadeOut;
+  -webkit-animation-duration: 3s;animation-duration: 3s;
+  -webkit-animation-delay: 3s;animation-delay: 3s;
+  -webkit-animation-fill-mode: both;animation-fill-mode: both;
 }

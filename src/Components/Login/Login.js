@@ -1,12 +1,32 @@
-import ValidateLogin from './ValidateLogin'
-import { Redirect} from 'react-router-dom'
+import { useState } from 'react'
+import axios from 'axios';
+import { Redirect } from 'react-router-dom'
 import { Formik, Field, Form } from "formik";
 import './Login.css';
 
 const Login = ({authorized}) => {
+    //state
+    const [errorMessage, setErrorMessage] = useState(false)
     // si ya esta logeado, carga home
     if(authorized){
       return <Redirect to="/" />
+    }
+    //////
+
+    //fetch token function
+    const ValidateLogin = async (credentials) => {
+      setErrorMessage(false)
+      try {
+      const response = await axios.post('http://challenge-react.alkemy.org/', credentials)
+      const token = response.data.token
+      localStorage.setItem('token', token)
+      // si todo ok, refresca pagina
+      window.location.reload();
+  
+      } catch {
+        setErrorMessage(true)
+        console.log(errorMessage)
+      }
     }
 
     //validate form functions
@@ -28,8 +48,9 @@ const Login = ({authorized}) => {
     }
 
     return (
+    <div>
       <div id="form">
-        <h1>React Challenge</h1>
+        <h1 id="title">Superhero App</h1>
         <Formik
           initialValues={{ email: "", password: "" }}
           onSubmit={(values) => {ValidateLogin(values)}}
@@ -50,6 +71,11 @@ const Login = ({authorized}) => {
           )}
         </Formik>
       </div>
+      { errorMessage &&
+      <div className="alert alert-danger" role="alert">
+      Credenciales inválidas, intenta nuevamente.
+      </div>}
+    </div>
 )
 }
 export default Login
