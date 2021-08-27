@@ -7,6 +7,8 @@ import './Login.css';
 const Login = ({authorized}) => {
     //state
     const [errorMessage, setErrorMessage] = useState(false)
+    const [sucessfullLogin, setSucessfullLogin] = useState(false)
+
     // si ya esta logeado, carga home
     if(authorized){
       return <Redirect to="/" />
@@ -19,13 +21,13 @@ const Login = ({authorized}) => {
       try {
       const response = await axios.post('http://challenge-react.alkemy.org/', credentials)
       const token = response.data.token
-      localStorage.setItem('token', token)
-      // si todo ok, refresca pagina
-      window.location.reload();
+      localStorage.setItem('token', token);
+      // si todo ok, redirecciona a home
+      setSucessfullLogin(true)
+      //
   
       } catch {
         setErrorMessage(true)
-        console.log(errorMessage)
       }
     }
 
@@ -73,8 +75,10 @@ const Login = ({authorized}) => {
       </div>
       { errorMessage &&
       <div className="alert alert-danger" role="alert">
-      Credenciales inválidas, intenta nuevamente.
+      Email o contraseña incorrectos.
       </div>}
+      { sucessfullLogin &&
+        <Redirect to="/" />}
     </div>
 )
 }

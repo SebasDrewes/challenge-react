@@ -3,13 +3,16 @@ import { Redirect } from 'react-router-dom'
 import Search from '../Search/Search'
 import Team from '../Team/Team'
 import './Home.css'
-const Home = ({authorized}) => {
+const Home = () => {
 
   const [team, setTeam] = useState([])
 
-  if(!authorized){
+  const token = localStorage.getItem('token')
+
+  if(!token){
     return <Redirect to="/login" />
   }
+  
   return(
     <div>
     <h2 id="title">Home</h2>

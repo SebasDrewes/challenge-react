@@ -10,8 +10,8 @@ function App() {
     <div className="app">
       <Router>
         <Switch>
+          <Route exact path="/" component={Home}/>
           <Route exact path="/login" component={() => <Login authorized={token}/>} />
-          <Route exact path="/" component={() => <Home authorized={token}/>} />
         </Switch>
       </Router>
     </div>
