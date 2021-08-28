@@ -2,9 +2,15 @@ import { useState } from 'react'
 import { Formik, Field, Form } from "formik";
 import { Link } from 'react-router-dom'
 import axios from 'axios';
+import {validLength, noRepeat, validAlignment} from './ValidHero'
 import './Search.css'
 const Search = () => {
     const [heroes, setHeroes] = useState([])
+    const [validSelection, setValidSelection] = useState(false)
+    const [invalidLength, setInvalidLength] = useState(false)
+    const [invalidRepeat, setInvalidRepeat] = useState(false)
+    const [invalidAlignment, setInvalidAlignment] = useState(false)
+
 
   const searchHero = async (value) => {
     if (value) {
@@ -21,9 +27,18 @@ const addHero = (hero) => {
   }else {
     team = JSON.parse(localStorage.getItem('team'));
   }
-  team.push(hero)
-  alert(team)
-  localStorage.setItem('team', JSON.stringify(team))
+
+  validLength(team) ? setInvalidLength(true) : setInvalidLength(false)
+
+  noRepeat(team, hero) ? setInvalidRepeat(true) : setInvalidRepeat(false)
+
+  validAlignment(team, hero) ? setInvalidAlignment(true) : setInvalidAlignment(false)
+
+  if (validLength(team) && noRepeat(team, hero) && validAlignment(team, hero)) {
+    setValidSelection(true);
+    team.push(hero);
+    localStorage.setItem('team', JSON.stringify(team))
+  } setValidSelection(false)
 }
     return (
         <div>

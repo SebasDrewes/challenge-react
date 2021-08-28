@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import Search from '../Search/Search'
+import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import Team from '../Team/Team'
 import './Home.css'
 const Home = () => {
@@ -12,7 +12,6 @@ const Home = () => {
   return(
     <div>
     <h2 id="title">Home</h2>
-    <Search/>
     <Team/>
     </div>
   );
