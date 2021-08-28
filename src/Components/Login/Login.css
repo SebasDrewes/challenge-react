@@ -1,13 +1,3 @@
-@-webkit-keyframes fadeOut {
-  0% {opacity: 1;}
-  100% {opacity: 0;}
-}
-
-@keyframes fadeOut {
-  0% {opacity: 1;}
-  100% {opacity: 0;}
-}
-
 body {
   background: url('./superhero-background.jpeg') no-repeat center fixed;
   background-color: rgb(0, 0, 0);     
@@ -38,15 +28,10 @@ body {
 #title {
   font-size: 5em;
 }
-.alert{
+.alert-danger{
   background-color: rgba(139, 60, 60, 0.9);
   text-align: center;
   border: none;
-
   color: white;
   font-size: 1.5em;
-  animation-name: fadeOut;
-  -webkit-animation-duration: 2s;animation-duration: 2s;
-  -webkit-animation-delay: 5s;animation-delay: 5s;
-  -webkit-animation-fill-mode: both;animation-fill-mode: both;
 }

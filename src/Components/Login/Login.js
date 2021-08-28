@@ -17,7 +17,6 @@ const Login = ({authorized}) => {
 
     //fetch token function
     const ValidateLogin = async (credentials) => {
-      setErrorMessage(false)
       try {
       const response = await axios.post('http://challenge-react.alkemy.org/', credentials)
       const token = response.data.token
@@ -74,8 +73,10 @@ const Login = ({authorized}) => {
         </Formik>
       </div>
       { errorMessage &&
-      <div className="alert alert-danger" role="alert">
+      <div className="alert alert-danger alert-dismissible fade show" role="alert">
       Email o contraseña incorrectos.
+      <button type="button" className="btn-close" data-bs-dismiss="alert" 
+      aria-label="Close" onClick={() => setErrorMessage(false)}></button>
       </div>}
       { sucessfullLogin &&
         <Redirect to="/" />}

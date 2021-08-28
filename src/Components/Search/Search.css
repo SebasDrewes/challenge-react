@@ -13,3 +13,6 @@ img {
     text-align: center;
     border: 1px solid white;
 }
+.alert-success{
+    background-color: rgba(33, 78, 48, 0.9);
+  }
