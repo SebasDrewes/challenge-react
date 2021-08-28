@@ -76,14 +76,17 @@ const addHero = (hero) => {
               }): null}
           </div>
           { errorMessage &&
-          <div className="alert alert-danger" role="alert">
-          {errorMessage}
-         </div>}
+            <div className="alert alert-danger alert-dismissible fade show" role="alert">
+            {errorMessage}
+            <button type="button" className="btn-close" data-bs-dismiss="alert" 
+            aria-label="Close" onClick={() => setErrorMessage('')}></button>
+            </div>}
          { validSelection &&
-          <div className="alert alert-warning alert-dismissible" role="alert">
-  <span type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></span>
-  <strong>Warning!</strong> Still on beta stage.
-</div>}
+            <div className="alert alert-success alert-dismissible fade show" role="alert">
+          Agregado al team
+          <button type="button" className="btn-close" data-bs-dismiss="alert" 
+            aria-label="Close" onClick={() => setValidSelection(false)}></button>
+          </div>}
         </div>
   );
 }
