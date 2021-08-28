@@ -6,7 +6,7 @@ const Search = ({team, setTeam}) => {
     const [heroes, setHeroes] = useState([])
 
   const searchHero = async (value) => {
-    if (value){
+    if (value) {
     const results = await axios.get(`https://www.superheroapi.com/api.php/4333347540058740/search/${value}`)
     setHeroes(results.data.results)
 }
@@ -45,8 +45,16 @@ const displaySearchHeroes = () => {
             </Form>
           </Formik>
           <div className="row">
-          {displaySearchHeroes()}
+            {heroes.map(hero => {
+              return (
+              <div key={hero.id} className="col heroCard"> 
+              <h1>{hero.name}</h1>
+              <img src={hero.image.url} alt={hero.name}/>
+              <button onClick={(e) => addHero(e, hero)}>Add Hero</button>
+              </div>)
+              })}
           </div>
+
         </div>
   );
 }

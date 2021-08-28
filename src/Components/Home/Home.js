@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Search from '../Search/Search'
 import Team from '../Team/Team'
 import './Home.css'

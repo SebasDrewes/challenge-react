@@ -16,6 +16,7 @@ const Team = ({team}) => {
       }
     return (
         <div>
+            <h1>Team</h1>
         {displayTeam()}
         </div>
   );
