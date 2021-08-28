@@ -1,13 +1,11 @@
-body {
-  background: url('./superhero-background.jpeg') no-repeat center fixed;
-  background-color: rgb(0, 0, 0);     
-  background-size: cover;
-}
 .form-control:focus {
   border-color: #3d3a3a;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(37, 37, 37, 0.6);
 }
 #form {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./superhero-background.jpeg') no-repeat center fixed;
+  background-color: rgb(0, 0, 0);     
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,12 +18,11 @@ body {
   top:0px;
   left:0px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.65);
 }
 .form-label {
   font-size: 1.5em;
 }
-#title {
+.title {
   font-size: 5em;
 }
 .alert-danger{

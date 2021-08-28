@@ -51,7 +51,7 @@ const Login = ({authorized}) => {
     return (
     <div>
       <div id="form">
-        <h1 id="title">Superhero App</h1>
+        <h1 className="title">SuperHero App</h1>
         <Formik
           initialValues={{ email: "", password: "" }}
           onSubmit={(values) => {ValidateLogin(values)}}

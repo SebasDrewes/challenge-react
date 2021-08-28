@@ -1,5 +1,5 @@
-import { Redirect } from 'react-router-dom';
-import { Link } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom';
+import Nav from '../Nav/Nav'
 import Team from '../Team/Team'
 import './Home.css'
 const Home = () => {
@@ -11,7 +11,10 @@ const Home = () => {
   
   return(
     <div>
-    <h2 id="title">Home</h2>
+    <Nav/>
+    <Link to="/search">
+      <button>Agregar Heroes</button>
+    </Link>
     <Team/>
     </div>
   );

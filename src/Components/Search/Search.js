@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react'
+import Nav from '../Nav/Nav'
+import Results from './Results'
+import { useState} from 'react'
 import { Formik, Field, Form } from "formik";
-import { Link } from 'react-router-dom'
 import axios from 'axios';
 import {validLength, noRepeat, validAlignment} from './ValidHero'
 import './Search.css'
@@ -52,6 +53,7 @@ const addHero = (hero) => {
 }
     return (
         <div>
+          <Nav/>
           <Formik
             initialValues={{ search: ""}}
             onSubmit={(value) => {searchHero(value.search)}}
@@ -64,17 +66,9 @@ const addHero = (hero) => {
               <button type="submit" className="btn btn-dark">Ingresar</button>
             </Form>
           </Formik>
-          <div className="row">
-            {heroes ? heroes.map(hero => {
-              return (
-              <div key={hero.id} className="col heroCard"> 
-              <h1>{hero.name}</h1>
-              <img src={hero.image.url} alt={hero.name}/>
-              <button onClick={() => addHero(hero)}>Add Hero</button>
-              <Link to={`/search/${hero.id}`}>Details</Link>
-              </div>)
-              }): null}
-          </div>
+
+          <Results heroes={heroes} addHero={addHero}/>
+          
           { errorMessage &&
             <div className="alert alert-danger alert-dismissible fade show" role="alert">
             {errorMessage}
