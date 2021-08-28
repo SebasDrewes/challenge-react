@@ -1,12 +1,8 @@
-import { useState } from 'react'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Search from '../Search/Search'
 import Team from '../Team/Team'
 import './Home.css'
 const Home = () => {
-
-  const [team, setTeam] = useState([])
-
   const token = localStorage.getItem('token')
 
   if(!token){
@@ -16,8 +12,8 @@ const Home = () => {
   return(
     <div>
     <h2 id="title">Home</h2>
-    <Search team={team} setTeam={setTeam}/>
-    <Team team={team} />
+    <Search/>
+    <Team/>
     </div>
   );
 }

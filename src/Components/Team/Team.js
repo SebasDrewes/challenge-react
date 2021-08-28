@@ -1,23 +1,17 @@
-const Team = ({team}) => {
-    const displayTeam = () => {
-        console.log(team)
-        const heroesTeam = [];
-        if(team)
-        for (let i = 0; i < team.length; i += 1) {
-           heroesTeam.push(
-                <div key={team[i].id} className="col heroCard"> 
-                    <h1>{team[i].name}</h1>
-                    <img src={team[i].image.url} alt={team[i].name}/>
-                    <button>Add Hero</button>
-                </div>
-            )
-        }
-        return heroesTeam || 'null'
-      }
+import { Link } from 'react-router-dom'
+
+const Team = () => {
+    const team = JSON.parse(localStorage.getItem('team'))
     return (
         <div>
-            <h1>Team</h1>
-        {displayTeam()}
+            {team ? team.map(hero => {
+              return (
+              <div key={`team${hero.id}`} className="col heroCard"> 
+              <h1>{hero.name}</h1>
+              <img src={hero.image.url} alt={hero.name}/>
+              <Link to={`/team/${hero.id}`}>Details</Link>
+              </div>)
+              }): null}
         </div>
   );
 }

@@ -1,34 +1,29 @@
 import { useState } from 'react'
 import { Formik, Field, Form } from "formik";
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 import './Search.css'
-const Search = ({team, setTeam}) => {
+const Search = () => {
     const [heroes, setHeroes] = useState([])
 
   const searchHero = async (value) => {
     if (value) {
     const results = await axios.get(`https://www.superheroapi.com/api.php/4333347540058740/search/${value}`)
     setHeroes(results.data.results)
+    console.log(heroes)
 }
 }
-const addHero = (e, hero) => {
-  e.preventDefault();
-  setTeam(team => [...team, hero])
-}
-const displaySearchHeroes = () => {
-    const fetchedHeroes = [];
-    if(heroes !== undefined)
-    for (let i = 0; i < heroes.length; i += 1) {
-        fetchedHeroes.push(
-            <div key={heroes[i].id} className="col heroCard"> 
-                <h1>{heroes[i].name}</h1>
-                <img src={heroes[i].image.url} alt={heroes[i].name}/>
-                <button onClick={(e) => addHero(e, heroes[i])}>Add Hero</button>
-            </div>
-        )
-    }
-    return fetchedHeroes || null
-
+// funcion para guardar heroes seleccionados en localStorage
+const addHero = (hero) => {
+  let team 
+  if (localStorage.getItem('team') === null) {
+    team = [];
+  }else {
+    team = JSON.parse(localStorage.getItem('team'));
+  }
+  team.push(hero)
+  alert(team)
+  localStorage.setItem('team', JSON.stringify(team))
 }
     return (
         <div>
@@ -45,16 +40,16 @@ const displaySearchHeroes = () => {
             </Form>
           </Formik>
           <div className="row">
-            {heroes.map(hero => {
+            {heroes ? heroes.map(hero => {
               return (
               <div key={hero.id} className="col heroCard"> 
               <h1>{hero.name}</h1>
               <img src={hero.image.url} alt={hero.name}/>
-              <button onClick={(e) => addHero(e, hero)}>Add Hero</button>
+              <button onClick={() => addHero(hero)}>Add Hero</button>
+              <Link to={`/search/${hero.id}`}>Details</Link>
               </div>)
-              })}
+              }): null}
           </div>
-
         </div>
   );
 }
