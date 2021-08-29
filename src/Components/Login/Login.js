@@ -4,13 +4,15 @@ import { Redirect } from 'react-router-dom'
 import { Formik, Field, Form } from "formik";
 import './Login.css';
 
-const Login = ({authorized}) => {
+const Login = () => {
     //state
     const [errorMessage, setErrorMessage] = useState(false)
     const [sucessfullLogin, setSucessfullLogin] = useState(false)
 
     // si ya esta logeado, carga home
-    if(authorized){
+    const token = localStorage.getItem('token')
+
+    if(token){
       return <Redirect to="/" />
     }
     //////

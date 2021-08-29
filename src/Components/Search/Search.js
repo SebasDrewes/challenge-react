@@ -1,6 +1,7 @@
 import Nav from '../Nav/Nav'
 import Results from './Results'
 import { useState} from 'react'
+import { Redirect } from 'react-router';
 import { Formik, Field, Form } from "formik";
 import axios from 'axios';
 import {validLength, noRepeat, validAlignment} from './ValidHero'
@@ -9,6 +10,12 @@ const Search = () => {
     const [heroes, setHeroes] = useState([])
     const [validSelection, setValidSelection] = useState(false)
     const [errorMessage, setErrorMessage] = useState('')
+
+    const token = localStorage.getItem('token')
+
+    if(!token){
+      return <Redirect to="/login" />
+    }
 
   const searchHero = async (value) => {
     if (value) {
@@ -51,6 +58,9 @@ const addHero = (hero) => {
     setValidSelection(false)
   }
 }
+// si no esta logeado, redirect to login
+
+
     return (
         <div>
           <Nav/>

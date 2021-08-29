@@ -8,6 +8,7 @@ const Nav = () => {
             <Link to="/">
                 <h1 id="title">SuperHero App</h1>
             </Link>
+            
             </div>
         </nav>
     )
