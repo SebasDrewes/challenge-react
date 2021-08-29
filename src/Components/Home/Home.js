@@ -27,20 +27,18 @@ const Home = () => {
             <h1 className="heroName">{hero.name}</h1>
           </div>
             <img src={hero.image.url} alt={hero.name} draggable={false} className="teamMemberImg"/>
-            <div className="buttons">
-             <div className="btn-group dropup">
+            <div className="buttons btn-group dropdown dropup">
             <button type="button" className="btn btn-dark dropdown-toggle btnTeam" data-bs-toggle="dropdown" aria-expanded="false">
              Powerstats
             </button>
               <ul className="dropdown-menu">
                 <li className="powerstat"><strong>Combate: </strong>{hero.powerstats.combat}</li>
                 <li className="powerstat"><strong>Durabilidad: </strong>{hero.powerstats.durability}</li>
-                <li className="powerstat"><strong>Inteligencia: </strong>{hero.powerstats.inteligence}</li>
+                <li className="powerstat"><strong>Inteligencia: </strong>{hero.powerstats.intelligence}</li>
                 <li className="powerstat"><strong>Poder: </strong>{hero.powerstats.power}</li>
                 <li className="powerstat"><strong>Velocidad: </strong>{hero.powerstats.speed}</li>
                 <li className="powerstat"><strong>Fuerza: </strong>{hero.powerstats.strength}</li>
               </ul>
-             </div>
             <Link to={`/${hero.id}`}><button className="btn btn-dark btnTeam" >Detalles</button></Link>
             <button className="btn btn-dark btnTeam" >Eliminar</button>
             </div>

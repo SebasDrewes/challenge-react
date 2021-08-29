@@ -84,3 +84,9 @@
     font-size: 1.5em;
     margin: 5px;
 }
+.dropdown-menu{
+    position: absolute;
+    inset: auto auto 0px 0px!important;
+    margin: 0px;
+    transform: translate(0px, -40px)!important;
+}
