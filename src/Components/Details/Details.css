@@ -2,7 +2,7 @@
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    background-color: black;
+    background-color: #212529;
     width: 70vw;
     height: 70vh;
     display: flex;
@@ -13,7 +13,8 @@
 #detailsImg {
     width:auto;
     height: auto;
-    border-radius: 3em;
+    border-radius: 3em 0 0 3em;
+    border-right: 1px solid #585B5E; 
 }
 #details {
     padding-left: 2vw;
@@ -21,11 +22,18 @@
 #heroTitle {
     margin: 0;
     padding-top: 1vw;
-    padding-right: 2vw;
+    padding-left: 2vw;
     font-size: 3em;
     text-align: center;
     font-weight: bold;
 }
 .info {
     font-size: 1.2em;
+}
+.back {
+    margin-top: 3vw;
+    margin-left: 3vw;
+    width: 10vw;
+    font-size: 1.5em;
+    font-weight: bold;
 }

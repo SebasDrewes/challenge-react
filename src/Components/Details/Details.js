@@ -1,9 +1,11 @@
 import Nav from '../Nav/Nav'
-import {Redirect} from 'react-router-dom'
+import {Redirect, useHistory} from 'react-router-dom'
 import { useState, useEffect} from 'react'
 import axios from 'axios';
 import'./Details.css';
 const Details = ({match}) => {
+
+    const history = useHistory();
 
     const token = localStorage.getItem('token')
 
@@ -41,6 +43,7 @@ const Details = ({match}) => {
              <p className="info"><strong>Lugar de trabajo:</strong> {heroDetails.work.base}</p>
              </div>
             </div>}
+            <button className="btn btn-dark back" onClick={() => history.goBack()}>Regresar</button>
         </div>
         );
     };

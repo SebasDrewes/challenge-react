@@ -1,7 +1,18 @@
 #title {
     font-family: sans-serif;
-    border: 5px solid white;
-    font-size: 5em;
+    font-size: 3em;
     font-weight: bold;
     color: white;
+}
+a {
+    text-decoration: none;
+}
+#icon {
+    width: 150px;
+    height: 150px;
+    color: white;
+}
+.salir {
+    font-size: 1.5em;
+    font-weight: bold;
 }
