@@ -16,7 +16,7 @@ const Home = () => {
     <div id="header">
       <h1 id="teamTitle">Tu equipo</h1>
       <Link to="/search">
-      <button className="btn btn-dark" >Agregar Heroes al equipo</button>
+      <button className="btn addHero" >Agregar Hero</button>
       </Link>
     </div>
       <div id="team">
@@ -28,6 +28,19 @@ const Home = () => {
           </div>
             <img src={hero.image.url} alt={hero.name} draggable={false} className="teamMemberImg"/>
             <div className="buttons">
+             <div className="btn-group dropup">
+            <button type="button" className="btn btn-dark dropdown-toggle btnTeam" data-bs-toggle="dropdown" aria-expanded="false">
+             Powerstats
+            </button>
+              <ul className="dropdown-menu">
+                <li className="powerstat"><strong>Combate: </strong>{hero.powerstats.combat}</li>
+                <li className="powerstat"><strong>Durabilidad: </strong>{hero.powerstats.durability}</li>
+                <li className="powerstat"><strong>Inteligencia: </strong>{hero.powerstats.inteligence}</li>
+                <li className="powerstat"><strong>Poder: </strong>{hero.powerstats.power}</li>
+                <li className="powerstat"><strong>Velocidad: </strong>{hero.powerstats.speed}</li>
+                <li className="powerstat"><strong>Fuerza: </strong>{hero.powerstats.strength}</li>
+              </ul>
+             </div>
             <Link to={`/${hero.id}`}><button className="btn btn-dark btnTeam" >Detalles</button></Link>
             <button className="btn btn-dark btnTeam" >Eliminar</button>
             </div>
@@ -42,3 +55,11 @@ export default Home
 
 
 // search https://www.superheroapi.com/api.php/4333347540058740/search/bat
+
+/*powerstats:
+combat: "90"
+durability: "55"
+intelligence: "81"
+power: "63"
+speed: "29"
+*/
