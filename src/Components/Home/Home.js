@@ -19,10 +19,10 @@ const Home = () => {
       <button className="btn btn-dark" >Agregar Heroes al equipo</button>
       </Link>
     </div>
-      <div id="team" className="row">
+      <div id="team">
       {team ? team.map(hero => {
         return (
-          <div key={`team${hero.id}`} className="teamMember col"> 
+          <div key={`team${hero.id}`} className="teamMember"> 
           <div className="heroNameContainer">
             <h1 className="heroName">{hero.name}</h1>
           </div>

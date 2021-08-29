@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     text-align: center;
-    margin: 5vw;
+    margin: 1vw;
+    width: 28vw;
 }
 .teamMemberImg {
     width: 100%;
@@ -37,10 +37,13 @@
 }
 #team {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .buttons {
     display: flex;
     position: relative;
+    justify-content: space-evenly;
     bottom: 10%;
 }
 #header {
@@ -53,5 +56,7 @@
     font-weight: bold;
 }
 .btnTeam{
+    width: 10vw;
+    font-weight: bold;
     background-color: #212529ce;
 }

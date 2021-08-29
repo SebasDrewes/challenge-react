@@ -16,7 +16,6 @@ function App() {
           <Route exact path="/search" component={Search} />
           <Route path="/search/:id" component={Details} />
           <Route path="/:id" component={Details} />
-          <Route render={() => <Redirect to={{pathname: "/"}} />} />
         </Switch>
       </Router>
     </div>
