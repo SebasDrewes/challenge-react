@@ -1,0 +1,57 @@
+.teamMember {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5vw;
+}
+.teamMemberImg {
+    width: 100%;
+    border-radius: 2em;
+}
+.heroNameContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20%;
+    width: 100%;
+    background-color: #212529ce;
+}
+.heroName {
+    font-size: 2em;
+    font-weight: bold;
+}
+#home {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #212529;
+    width: 90vw;
+    min-height: 90%;
+    display: flex;
+    border-radius: 3em;
+    align-self: center;
+    flex-direction: column;
+    align-items: center;
+}
+#team {
+    display: flex;
+}
+.buttons {
+    display: flex;
+    position: relative;
+    bottom: 10%;
+}
+#header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#teamTitle {
+    font-size: 3em;
+    font-weight: bold;
+}
+.btnTeam{
+    background-color: #212529ce;
+}

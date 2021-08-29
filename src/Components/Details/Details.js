@@ -28,7 +28,7 @@ const Details = ({match}) => {
     return (
         <div>
             <Nav/>
-            {heroDetails.response && 
+            {heroDetails.response === "success" && 
              <div key={`details${heroDetails.id}`} id="detailsCard">
              <img src={heroDetails.image.url} alt={heroDetails.name} id="detailsImg" draggable={false}/>
              <div id="details">
