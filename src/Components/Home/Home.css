@@ -22,6 +22,7 @@
 .heroName {
     font-size: 2em;
     font-weight: bold;
+    margin: 0;
 }
 #home {
     margin-left: auto;
@@ -38,6 +39,7 @@
 #team {
     display: flex;
     flex-wrap: wrap;
+    min-height: 70vh;
     justify-content: center;
 }
 .buttons {
@@ -89,4 +91,7 @@
     inset: auto auto 0px 0px!important;
     margin: 0px;
     transform: translate(0px, -40px)!important;
+}
+#emptyTeam {
+    height: 70vh;
 }

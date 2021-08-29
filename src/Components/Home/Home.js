@@ -1,13 +1,19 @@
+import { useState } from 'react'
 import { Redirect, Link } from 'react-router-dom';
 import Nav from '../Nav/Nav'
 import './Home.css'
 const Home = () => {
   const token = localStorage.getItem('token')
-
+  const [team, setTeam] = useState(JSON.parse(localStorage.getItem('team')))
   if(!token){
     return <Redirect to="/login" />
   }
-  const team = JSON.parse(localStorage.getItem('team'))
+
+  const deleteHero = (id) => {
+    const newTeam = (team.filter(hero => hero.id !== id))
+    setTeam(newTeam)
+    localStorage.setItem('team', JSON.stringify(newTeam))
+  }
 
   return(
     <div>
@@ -40,10 +46,12 @@ const Home = () => {
                 <li className="powerstat"><strong>Fuerza: </strong>{hero.powerstats.strength}</li>
               </ul>
             <Link to={`/${hero.id}`}><button className="btn btn-dark btnTeam" >Detalles</button></Link>
-            <button className="btn btn-dark btnTeam" >Eliminar</button>
+            <button className="btn btn-dark btnTeam" onClick={() => deleteHero(hero.id)}>Eliminar</button>
             </div>
           </div>)
-      }): null}
+      }):
+      <h1>Agrega heroes a tu equipo! ↑</h1>
+      }
           </div>
         </div>
     </div>
