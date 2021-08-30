@@ -11,6 +11,7 @@
 }
 #header {
     display:flex;
+    flex-direction: column;
     margin: 1vw;
     justify-content: space-around;
     align-items: center;
@@ -26,7 +27,6 @@
     border: 1px solid #585B5E; 
     font-size: 1.5em;
     font-weight: bold;
-    margin-left: 20vw;
 }
 .addHero:hover {
     color: #ffffff;

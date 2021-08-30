@@ -2,7 +2,7 @@ import Login from './Components/Login/Login';
 import Search from './Components/Search/Search'
 import Home from './Components/Home/Home';
 import Details from './Components/Details/Details'
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css'
 
 

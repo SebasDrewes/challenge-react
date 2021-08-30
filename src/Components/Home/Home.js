@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Redirect, Link } from 'react-router-dom';
 import Nav from '../Nav/Nav'
+import Stats from '../Stats/Stats'
 import Team from '../Team/Team'
 import './Home.css'
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
       <Link to="/search">
       <button className="btn addHero">Agregar Hero</button>
       </Link> : null}
+      <Stats team={team} />
     </div>
     <Team team={team} setTeam={setTeam}/>
     </div>

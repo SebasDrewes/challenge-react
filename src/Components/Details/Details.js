@@ -1,18 +1,17 @@
 import Nav from '../Nav/Nav'
-import {Redirect, useHistory} from 'react-router-dom'
-import { useState, useEffect} from 'react'
+import { Redirect, useHistory } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import axios from 'axios';
 import'./Details.css';
 const Details = ({match}) => {
 
     const history = useHistory();
-
     const token = localStorage.getItem('token')
-
     const [heroDetails, setHeroDetails] = useState([])
 
     useEffect(() => {
         fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const fetchData = async () => {
