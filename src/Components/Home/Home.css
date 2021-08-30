@@ -1,29 +1,3 @@
-.teamMember {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    margin: 1vw;
-    width: 28vw;
-}
-.teamMemberImg {
-    width: 100%;
-    border-radius: 2em;
-}
-.heroNameContainer {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 20%;
-    width: 100%;
-    background-color: #212529ce;
-}
-.heroName {
-    font-size: 2em;
-    font-weight: bold;
-    margin: 0;
-}
 #home {
     margin-left: auto;
     margin-right: auto;
@@ -34,18 +8,6 @@
     align-self: center;
     flex-direction: column;
     align-items: stretch;
-}
-#team {
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 20vh;
-    justify-content: center;
-}
-.buttons {
-    display: flex;
-    position: relative;
-    justify-content: space-evenly;
-    bottom: 10%;
 }
 #header {
     display:flex;
@@ -58,11 +20,6 @@
     font-size: 3em;
     border-right: 1px
 }
-.btnTeam{
-    width: 9vw;
-    font-weight: bold;
-    background-color: #212529ce;
-}
 .addHero{
     color: #d1d0d0;
     background-color: rgba(27, 31, 65, 0.5);
@@ -74,40 +31,4 @@
 .addHero:hover {
     color: #ffffff;
     background-color: rgba(38, 44, 90)
-}
-.dropdown-menu {
-    background-color: #212529ce;
-    width: 20vw;
-    border-radius: 1em;
-}
-.powerstat{
-    color: white;
-    font-size: 1.5em;
-    margin: 5px;
-}
-.dropdown-menu{
-    position: absolute;
-    inset: auto auto 0px 0px!important;
-    margin: 0px;
-    transform: translate(0px, -40px)!important;
-}
-#noTeam {
-    font-size: 3em;
-    font-weight: bold;
-    margin-top: 4vh;
-    animation: MoveUpDown 3s linear infinite;
-}
-  
-  @keyframes MoveUpDown {
-    0% {
-        transform: translateY(0);
-      }
-    
-      50% {
-        transform: translateY(10px);
-      }
-    
-      100% {
-        transform: translateY(0);
-      }
 }

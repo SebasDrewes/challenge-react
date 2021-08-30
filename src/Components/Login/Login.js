@@ -69,7 +69,7 @@ const Login = () => {
             <Field name="password" type="password" className="form-control" validate={validatePassword}/>
             {errors.password && touched.password ? <div>{errors.password}</div> : null}
             </div>
-            <button type="submit" className="btn btn-dark">Ingresar</button>
+            <button type="submit" className="btn btn-dark">Enviar</button>
           </Form>
           )}
         </Formik>
