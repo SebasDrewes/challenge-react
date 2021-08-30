@@ -29,7 +29,6 @@
     margin-right: auto;
     background-color: #212529;
     width: 90vw;
-    min-height: 90%;
     display: flex;
     border-radius: 3em;
     align-self: center;
@@ -39,7 +38,7 @@
 #team {
     display: flex;
     flex-wrap: wrap;
-    min-height: 70vh;
+    min-height: 20vh;
     justify-content: center;
 }
 .buttons {
@@ -92,6 +91,23 @@
     margin: 0px;
     transform: translate(0px, -40px)!important;
 }
-#emptyTeam {
-    height: 70vh;
+#noTeam {
+    font-size: 3em;
+    font-weight: bold;
+    margin-top: 4vh;
+    animation: MoveUpDown 3s linear infinite;
+}
+  
+  @keyframes MoveUpDown {
+    0% {
+        transform: translateY(0);
+      }
+    
+      50% {
+        transform: translateY(10px);
+      }
+    
+      100% {
+        transform: translateY(0);
+      }
 }

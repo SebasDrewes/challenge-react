@@ -11,8 +11,14 @@ const Search = () => {
     const [validSelection, setValidSelection] = useState(false)
     const [errorMessage, setErrorMessage] = useState('')
 
-    const token = localStorage.getItem('token')
 
+    // check if team is already full
+    const team = JSON.parse(localStorage.getItem('team'))
+    if(team.length === 6) {
+      return <Redirect to="/" />
+    }
+    //check if not logged in
+    const token = localStorage.getItem('token')
     if(!token){
       return <Redirect to="/login" />
     }

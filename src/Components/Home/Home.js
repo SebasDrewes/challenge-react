@@ -21,12 +21,14 @@ const Home = () => {
     <div id="home">
     <div id="header">
       <h1 id="teamTitle">Tu equipo</h1>
+      {team && team.length !== 6 ?
       <Link to="/search">
       <button className="btn addHero" >Agregar Hero</button>
-      </Link>
+      </Link> : null}
     </div>
       <div id="team">
-      {team ? team.map(hero => {
+        {console.log(team)}
+      {team && team.length ? team.map(hero => {
         return (
           <div key={`team${hero.id}`} className="teamMember"> 
           <div className="heroNameContainer">
@@ -49,9 +51,7 @@ const Home = () => {
             <button className="btn btn-dark btnTeam" onClick={() => deleteHero(hero.id)}>Eliminar</button>
             </div>
           </div>)
-      }):
-      <h1>Agrega heroes a tu equipo! ↑</h1>
-      }
+      })  :         <h1 id="noTeam">Tu equipo esta vacio, agrega heroes! ↑</h1>}
           </div>
         </div>
     </div>
