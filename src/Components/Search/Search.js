@@ -4,7 +4,7 @@ import { useState} from 'react'
 import { Redirect } from 'react-router';
 import { Formik, Field, Form } from "formik";
 import axios from 'axios';
-import {validLength, noRepeat, validAlignment} from './ValidHero'
+import {noRepeat, validAlignment} from './ValidHero'
 import './Search.css'
 const Search = () => {
     const [heroes, setHeroes] = useState(JSON.parse(sessionStorage.getItem('recentSearch')))
@@ -35,7 +35,7 @@ const Search = () => {
     setErrorMessage('')
     // si no se encuentran, se muestra error
    } else {
-    setErrorMessage('invalidSearch')
+    setErrorMessage('No encontrado')
    }
 }
 }
@@ -52,13 +52,11 @@ const addHero = (hero) => {
     team = JSON.parse(localStorage.getItem('team'));
   }
   // asignacion de valor error message
-  validAlignment(team, hero) || setErrorMessage('invalidAlignment')
+  validAlignment(team, hero) || setErrorMessage('No podés elegir más de tres héroes de la misma alineación.')
 
-  noRepeat(team, hero) || setErrorMessage('invalidRepeat')
+  noRepeat(team, hero) || setErrorMessage('No podés elegir el mismo héroe más de una vez.')
 
-  validLength(team) || setErrorMessage('invalidLength')
-
-  if (validLength(team) && noRepeat(team, hero) && validAlignment(team, hero)) {
+  if (noRepeat(team, hero) && validAlignment(team, hero)) {
     setValidSelection(true);
     team.push(hero);
     localStorage.setItem('team', JSON.stringify(team))
@@ -92,14 +90,14 @@ const addHero = (hero) => {
           <Results heroes={heroes} addHero={addHero}/>
           
           { errorMessage &&
-            <div className="alert alert-danger alert-dismissible fade show" role="alert">
+            <div className="alert alert-danger alert-dismissible fade show alertSearch" role="alert">
             {errorMessage}
             <button type="button" className="btn-close" data-bs-dismiss="alert" 
             aria-label="Close" onClick={() => setErrorMessage('')}></button>
             </div>}
          { validSelection &&
-            <div className="alert alert-success alert-dismissible fade show" role="alert">
-          Agregado al team
+            <div className="alert alert-success alert-dismissible fade show alertSearch" role="alert">
+          Agregado al equipo.
           <button type="button" className="btn-close" data-bs-dismiss="alert" 
             aria-label="Close" onClick={() => setValidSelection(false)}></button>
           </div>}

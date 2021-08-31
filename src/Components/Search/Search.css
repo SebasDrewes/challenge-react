@@ -23,3 +23,19 @@
     color: white;
     font-size: 1.5em;
 }
+.searchResults {
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #212529fd;
+    width: 90vw;
+    display: flex;
+    border-radius: 3em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.alertSearch{
+    position: fixed;
+    width: 100vw;
+    top: 0;
+}

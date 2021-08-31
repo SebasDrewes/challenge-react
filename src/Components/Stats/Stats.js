@@ -17,8 +17,35 @@ const Stats = ({team}) => {
         totalFuerza += parseInt(hero.powerstats.strength);
     })
 
-    let teamType = Math.max(totalCombate, totalDurabilidad, totalInteligencia,
+    const highestStat = Math.max(totalCombate, totalDurabilidad, totalInteligencia,
         totalPoder, totalVelocidad, totalFuerza)
+        console.log(highestStat === totalCombate)
+
+    let teamType
+        // switch para elegir teamType
+    switch (highestStat) {
+        case totalCombate:
+            teamType = 'Combate';
+            break;
+        case totalDurabilidad:
+            teamType = 'Durabilidad';
+            break;
+        case totalInteligencia:
+            teamType = 'Inteligencia';
+            break;
+        case totalPoder:
+            teamType = 'Poder';
+            break;
+        case totalVelocidad:
+            teamType = 'Velocidad';
+            break;
+        case totalFuerza:
+            teamType = 'Fuerza';
+            break;
+        default:
+            teamType = 'Desconocido';
+
+        }
 
     return (
         <div className="container">
@@ -27,7 +54,7 @@ const Stats = ({team}) => {
             </button>
             <div className="dropdown-menu statsDropdown">
             <div className="clearfix">
-            <p className="col teamType"><strong>Tipo de Equipo: </strong>Inteligencia</p>
+            <p className="col teamType"><strong>Tipo de Equipo: </strong>{teamType}</p>
             </div>
             <div className="row">
             <p className="col"><strong>Peso promedio: </strong>{`${Math.round(totalPeso / team.length)} kg`}</p>
