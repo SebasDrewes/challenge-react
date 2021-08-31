@@ -14,7 +14,7 @@ const Search = () => {
 
     // check if team is already full
     const team = JSON.parse(localStorage.getItem('team'))
-    if(team.length === 6) {
+    if(team && team.length === 6) {
       return <Redirect to="/" />
     }
     //check if not logged in

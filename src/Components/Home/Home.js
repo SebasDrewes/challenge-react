@@ -22,7 +22,7 @@ const Home = () => {
       {team && team.length > 0 ?
       <Stats team={team} />: null}
       </div>
-      {team && team.length !== 6 ?
+      {(team === null ) || (team && team.length !== 6 )?
       <Link to="/search">
       <button className="btn addHero">Agregar Hero</button>
       </Link> : null}
