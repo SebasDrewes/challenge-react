@@ -2,7 +2,7 @@ import './Powerstat.css'
 
 const Powerstat = ({hero}) => {
     return (
-        <ul className="dropdown-menu">
+        <ul className="dropdown-menu powerStatDropdown">
         <div className="progress-bar" role="progressbar" 
         style={{width:`${hero.powerstats.combat}%`}}
         aria-valuenow={hero.powerstats.combat} aria-valuemin="0" aria-valuemax="100">

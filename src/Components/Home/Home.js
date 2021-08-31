@@ -15,15 +15,16 @@ const Home = () => {
     <Nav/>
     <div id="home">
     <div id="header">
-    <div>
+      <div id="titleContainer">
       <h1 id="teamTitle">Tu equipo</h1>
+      {team && team.length > 0 ?
+      <Stats team={team} />: null}
+      </div>
       {team && team.length !== 6 ?
       <Link to="/search">
       <button className="btn addHero">Agregar Hero</button>
       </Link> : null}
-    </div>
-      <Stats team={team} />
-    </div>
+      </div>
     <Team team={team} setTeam={setTeam}/>
     </div>
     </div>

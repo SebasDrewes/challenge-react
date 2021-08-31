@@ -4,3 +4,25 @@
 .container {
     width: 30vw;
 }
+.statsDropdown {
+    background-color: #212529f5;
+    min-width: 50vw;
+    color: white;
+    padding: 0;
+    border-radius: 0.5em;
+    text-align: center;
+}
+.col{
+    margin: 5px;
+    font-size: 1.5em;
+    animation: opacity 2s;
+    animation-iteration-count: initial;
+}
+.teamType {
+    font-size: 2em;
+}
+.statsBtn {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-left: 50px;
+}

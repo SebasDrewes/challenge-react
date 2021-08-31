@@ -12,13 +12,17 @@
 #header {
     display:flex;
     margin: 1vw;
-    justify-content: space-around;
+    justify-content:space-between;
     align-items: center;
     border-bottom: 1px solid #585B5E; 
 }
+#titleContainer {
+    display: flex;
+    align-items: center;
+}
 #teamTitle {
+    margin-left: 50px;
     font-size: 3em;
-    border-right: 1px
 }
 .addHero{
     color: #d1d0d0;
