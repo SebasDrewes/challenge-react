@@ -42,21 +42,6 @@
     background-color: #212529ce;
 }
 
-.powerstat{
-    text-align: start;
-    color: white;
-    font-size: 1.5em;
-    margin: 5px;
-}
-.dropdown-menu{
-    background-color: #212529ce;
-    width: 20vw;
-    border-radius: 1em;
-    position: absolute;
-    inset: auto auto 0px 0px!important;
-    margin: 0px;
-    transform: translate(0px, -40px)!important;
-}
 #noTeam {
     font-size: 3em;
     font-weight: bold;
@@ -76,8 +61,4 @@
       100% {
         transform: translateY(0);
       }
-}
-.progress-bar {
-    overflow: visible;
-    background-color: rgba(36, 42, 97, 0.8);
 }

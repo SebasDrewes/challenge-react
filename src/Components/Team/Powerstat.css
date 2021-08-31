@@ -1,0 +1,30 @@
+.dropdown-menu{
+    background-color: #14171ae0;
+    width: 20vw;
+    border-radius: 1em;
+    position: absolute;
+    inset: auto auto 0px 0px!important;
+    margin: 0px;
+    transform: translate(0px, -40px)!important;
+}
+.powerstat{
+    text-align: start;
+    color: white;
+    margin: 5px;
+    font-size: 1.5em;
+}
+.progress-bar {
+    overflow: visible;
+    background-color: rgba(70, 72, 146, 0.473);
+    animation: opacity 2s;
+    animation-iteration-count: initial;
+}
+  
+  @keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+      100% {
+        opacity: 1;
+      }
+}
