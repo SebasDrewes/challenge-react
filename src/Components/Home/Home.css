@@ -26,12 +26,13 @@
 }
 .addHero{
     color: #d1d0d0;
-    background-color: rgba(36, 42, 97, 0.8);
+    background-color: rgb(33, 37, 70);
     border: 1px solid #585B5E; 
     font-size: 1.5em;
     font-weight: bold;
 }
 .addHero:hover {
     color: #ffffff;
-    background-color: rgba(38, 44, 90)
+    font-weight: bold;
+    background-color: rgb(45, 50, 94);
 }

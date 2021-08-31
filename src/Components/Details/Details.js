@@ -27,7 +27,7 @@ const Details = ({match}) => {
     return (
         <div>
             <Nav/>
-            {heroDetails.response === "success" && 
+            {heroDetails.response === "success" ? 
              <div key={`details${heroDetails.id}`} id="detailsCard">
              <img src={heroDetails.image.url} alt={heroDetails.name} id="detailsImg" draggable={false}/>
              <div id="details">
@@ -41,7 +41,7 @@ const Details = ({match}) => {
              <p className="info"><strong>Color de pelo:</strong> {heroDetails.appearance["hair-color"]}</p>
              <p className="info"><strong>Lugar de trabajo:</strong> {heroDetails.work.base}</p>
              </div>
-            </div>}
+            </div> : <h1 id="notFound">No encontrado</h1>}
             <button className="btn btn-dark back" onClick={() => history.goBack()}>Regresar</button>
         </div>
         );
