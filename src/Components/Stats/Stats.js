@@ -21,17 +21,17 @@ const Stats = ({team}) => {
         totalPoder, totalVelocidad, totalFuerza)
 
     return (
-        <div>
+        <div className="container">
             <button type="button" className="btn btn-dark dropdown-toggle statsBtn" data-bs-toggle="dropdown" aria-expanded="false">
             Estadisticas
             </button>
             <div className="dropdown-menu statsDropdown">
-            <div className="row">
+            <div className="clearfix">
             <p className="col teamType"><strong>Tipo de Equipo: </strong>Inteligencia</p>
             </div>
             <div className="row">
-            <p className="col"><strong>Peso promedio: </strong>{Math.round(totalPeso / team.length)}</p>
-            <p className="col"><strong>Altura promedio: </strong>{Math.round(totalAltura / team.length)}</p>
+            <p className="col"><strong>Peso promedio: </strong>{`${Math.round(totalPeso / team.length)} kg`}</p>
+            <p className="col"><strong>Altura promedio: </strong>{`${Math.round(totalAltura / team.length)} cm`}</p>
             </div>
             <div className="row">
             <p className="col"><strong>Combate: </strong>{totalCombate}</p>

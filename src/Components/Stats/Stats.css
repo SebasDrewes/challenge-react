@@ -5,7 +5,7 @@
     width: 30vw;
 }
 .statsDropdown {
-    background-color: #212529f5;
+    background-color: #212529fd;
     min-width: 50vw;
     color: white;
     padding: 0;
@@ -20,6 +20,8 @@
 }
 .teamType {
     font-size: 2em;
+    padding: 0;
+    border-bottom: 1px #585B5E solid;
 }
 .statsBtn {
     font-weight: bold;
