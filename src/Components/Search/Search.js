@@ -74,15 +74,19 @@ const addHero = (hero) => {
             initialValues={{ search: ""}}
             onSubmit={(value) => {searchHero(value.search)}}
           >
-              <Form>
-            <div className="mb-3">
-             <label htmlFor="search" className="form-label">Buscar SuperHero</label>
+
+          <Form className="row g-3 align-items-center searchContainer">
+            <div className="col-auto">
+              <label htmlFor="search" className="form-label">Buscar SuperHero</label>
+              </div>
+              <div className="col-auto">
               <Field name="search" type="text" className="form-control"/>
               </div>
-              <button type="submit" className="btn btn-dark">Ingresar</button>
+              <div className="col-auto">
+              <button type="submit" className="btn btn-dark">Buscar</button>
+              </div>
             </Form>
           </Formik>
-
           <Results heroes={heroes} addHero={addHero}/>
           
           { errorMessage &&
@@ -97,6 +101,7 @@ const addHero = (hero) => {
           <button type="button" className="btn-close" data-bs-dismiss="alert" 
             aria-label="Close" onClick={() => setValidSelection(false)}></button>
           </div>}
+          
         </div>
   );
 }

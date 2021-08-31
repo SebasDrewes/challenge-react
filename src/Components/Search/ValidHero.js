@@ -12,6 +12,7 @@
     }
 
     const validAlignment = (team, hero) => {
+      
       const heroAlignment = hero.biography.alignment
       // si el hero es neutral, no se puede agregar.
       if (heroAlignment === 'neutral') {

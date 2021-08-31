@@ -1,5 +1,12 @@
-body {
-    color: white;
+.searchContainer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    font-size: 2.5em;
+    border-radius: 3em;
+    flex-direction: row;
 }
 .heroCard {
     display: flex;

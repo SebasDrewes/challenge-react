@@ -44,9 +44,8 @@
 
 #noTeam {
     font-size: 3em;
-    font-weight: bold;
     margin-top: 4vh;
-    animation: MoveUpDown 3s linear infinite;
+    animation: MoveUpDown 5s linear infinite;
 }
   
   @keyframes MoveUpDown {
