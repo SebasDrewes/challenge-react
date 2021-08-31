@@ -7,6 +7,8 @@ import './Home.css'
 const Home = () => {
   const token = localStorage.getItem('token')
   const [team, setTeam] = useState(JSON.parse(localStorage.getItem('team')))
+  //borra recentSearch al cargar home
+  sessionStorage.removeItem('recentSearch')
   if(!token){
     return <Redirect to="/login" />
   }

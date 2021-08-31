@@ -7,7 +7,7 @@ import axios from 'axios';
 import {validLength, noRepeat, validAlignment} from './ValidHero'
 import './Search.css'
 const Search = () => {
-    const [heroes, setHeroes] = useState([])
+    const [heroes, setHeroes] = useState(JSON.parse(sessionStorage.getItem('recentSearch')))
     const [validSelection, setValidSelection] = useState(false)
     const [errorMessage, setErrorMessage] = useState('')
 
@@ -28,11 +28,13 @@ const Search = () => {
     const results = await axios.get(`https://www.superheroapi.com/api.php/4333347540058740/search/${value}`)
     // si se encuentran resultados, se muestran
     if(results.data.results){
-    setHeroes(results.data.results)
+    let recentSearch = results.data.results
+    setHeroes(recentSearch)
+    // logica para guardar ultima busqueda en sessionStorage, para redisplay en caso de ver detalles
+    sessionStorage.setItem('recentSearch', JSON.stringify(recentSearch))
     setErrorMessage('')
     // si no se encuentran, se muestra error
    } else {
-    setHeroes([])
     setErrorMessage('invalidSearch')
    }
 }
