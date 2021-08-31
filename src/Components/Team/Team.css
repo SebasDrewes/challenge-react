@@ -43,6 +43,7 @@
 }
 
 .powerstat{
+    text-align: start;
     color: white;
     font-size: 1.5em;
     margin: 5px;
@@ -75,4 +76,8 @@
       100% {
         transform: translateY(0);
       }
+}
+.progress-bar {
+    overflow: visible;
+    background-color: rgba(36, 42, 97, 0.8);
 }
