@@ -1,5 +1,8 @@
 const Stats = ({team}) => {
     console.log(team)
+    let totalCombate = 0
+    team.forEach(hero => totalCombate += parseInt(hero.powerstats.combat));
+    console.log(totalCombate)
     return (
         <div>
             <h1><u>Estadisticas</u></h1>
