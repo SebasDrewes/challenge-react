@@ -43,7 +43,6 @@ const Search = () => {
 const addHero = (hero) => {
   if(errorMessage) {
     setErrorMessage('');
-    console.log(errorMessage)
   }
   let team 
   if (localStorage.getItem('team') === null) {
@@ -64,9 +63,6 @@ const addHero = (hero) => {
     setValidSelection(false)
   }
 }
-// si no esta logeado, redirect to login
-
-
     return (
         <div>
           <Nav/>
@@ -108,6 +104,3 @@ const addHero = (hero) => {
   );
 }
 export default Search
-
-
-// search https://www.superheroapi.com/api.php/4333347540058740/search/bat

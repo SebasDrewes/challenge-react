@@ -17,7 +17,6 @@ const Details = ({match}) => {
     const fetchData = async () => {
        const fetchedData = await axios.get(`https://www.superheroapi.com/api.php/4333347540058740/${match.params.id}`)
        setHeroDetails(fetchedData.data)
-       console.log(fetchedData.data)
     }
 
     if(!token){

@@ -33,14 +33,3 @@ const Home = () => {
   );
 }
 export default Home
-
-
-// search https://www.superheroapi.com/api.php/4333347540058740/search/bat
-
-/*powerstats:
-combat: "90"
-durability: "55"
-intelligence: "81"
-power: "63"
-speed: "29"
-*/

@@ -5,7 +5,7 @@ const Stats = ({team}) => {
     let [totalPeso, totalAltura, totalCombate, totalDurabilidad, totalInteligencia,
     totalPoder, totalVelocidad, totalFuerza]  = Array(8).fill(0)
 
-    console.log(team)
+    //sumatoria de statss
     team.forEach(hero => {
         totalPeso += parseInt(hero.appearance.weight[1])
         totalAltura += parseInt(hero.appearance.height[1])
@@ -19,7 +19,6 @@ const Stats = ({team}) => {
 
     const highestStat = Math.max(totalCombate, totalDurabilidad, totalInteligencia,
         totalPoder, totalVelocidad, totalFuerza)
-        console.log(highestStat === totalCombate)
 
     let teamType
         // switch para elegir teamType
