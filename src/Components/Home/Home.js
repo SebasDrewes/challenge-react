@@ -15,7 +15,7 @@ const Home = () => {
   return(
     <div>
     <Nav/>
-    <div id="home">
+    <div data-testid="home" id="home">
     <div id="header">
       <div id="titleContainer">
       <h1 id="teamTitle">Tu equipo</h1>
