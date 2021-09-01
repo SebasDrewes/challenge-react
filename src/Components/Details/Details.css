@@ -59,6 +59,7 @@
         font-size: 0.8em;
     }
     #detailsCard {
+        margin-top:10vh;
         height: auto;
     }
 }
