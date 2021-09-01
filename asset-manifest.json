@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/SebasDrewes/challenge-react/static/css/main.61c60b50.chunk.css",
-    "main.js": "/SebasDrewes/challenge-react/static/js/main.f7f2be61.chunk.js",
-    "main.js.map": "/SebasDrewes/challenge-react/static/js/main.f7f2be61.chunk.js.map",
-    "runtime-main.js": "/SebasDrewes/challenge-react/static/js/runtime-main.b29acd50.js",
-    "runtime-main.js.map": "/SebasDrewes/challenge-react/static/js/runtime-main.b29acd50.js.map",
-    "static/css/2.983f79de.chunk.css": "/SebasDrewes/challenge-react/static/css/2.983f79de.chunk.css",
-    "static/js/2.9b32621d.chunk.js": "/SebasDrewes/challenge-react/static/js/2.9b32621d.chunk.js",
-    "static/js/2.9b32621d.chunk.js.map": "/SebasDrewes/challenge-react/static/js/2.9b32621d.chunk.js.map",
-    "index.html": "/SebasDrewes/challenge-react/index.html",
-    "static/css/2.983f79de.chunk.css.map": "/SebasDrewes/challenge-react/static/css/2.983f79de.chunk.css.map",
-    "static/css/main.61c60b50.chunk.css.map": "/SebasDrewes/challenge-react/static/css/main.61c60b50.chunk.css.map",
-    "static/js/2.9b32621d.chunk.js.LICENSE.txt": "/SebasDrewes/challenge-react/static/js/2.9b32621d.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/SebasDrewes/challenge-react/static/media/superhero-background.75084a68.jpeg"
+    "main.css": "/challenge-react/static/css/main.3a91083f.chunk.css",
+    "main.js": "/challenge-react/static/js/main.f7f2be61.chunk.js",
+    "main.js.map": "/challenge-react/static/js/main.f7f2be61.chunk.js.map",
+    "runtime-main.js": "/challenge-react/static/js/runtime-main.33363f4c.js",
+    "runtime-main.js.map": "/challenge-react/static/js/runtime-main.33363f4c.js.map",
+    "static/css/2.983f79de.chunk.css": "/challenge-react/static/css/2.983f79de.chunk.css",
+    "static/js/2.9b32621d.chunk.js": "/challenge-react/static/js/2.9b32621d.chunk.js",
+    "static/js/2.9b32621d.chunk.js.map": "/challenge-react/static/js/2.9b32621d.chunk.js.map",
+    "index.html": "/challenge-react/index.html",
+    "static/css/2.983f79de.chunk.css.map": "/challenge-react/static/css/2.983f79de.chunk.css.map",
+    "static/css/main.3a91083f.chunk.css.map": "/challenge-react/static/css/main.3a91083f.chunk.css.map",
+    "static/js/2.9b32621d.chunk.js.LICENSE.txt": "/challenge-react/static/js/2.9b32621d.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/challenge-react/static/media/superhero-background.75084a68.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.b29acd50.js",
+    "static/js/runtime-main.33363f4c.js",
     "static/css/2.983f79de.chunk.css",
     "static/js/2.9b32621d.chunk.js",
-    "static/css/main.61c60b50.chunk.css",
+    "static/css/main.3a91083f.chunk.css",
     "static/js/main.f7f2be61.chunk.js"
   ]
 }
