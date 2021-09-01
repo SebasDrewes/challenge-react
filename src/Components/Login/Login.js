@@ -7,16 +7,16 @@ import './Login.css';
 const Login = () => {
     //state
     const [errorMessage, setErrorMessage] = useState(false)
-    const [sucessfullLogin, setSucessfullLogin] = useState(false)
+    const [sucessfulLogin, setSucessfulLogin] = useState(false)
 
     // si ya esta logeado, carga home
     const token = localStorage.getItem('token')
 
-    
+
     //cleanup function
     useEffect(() => {
       return () => {
-        setErrorMessage(false)
+        setSucessfulLogin(false)
       }
     })
     if(token){
@@ -31,7 +31,7 @@ const Login = () => {
       const token = response.data.token
       localStorage.setItem('token', token);
       // si todo ok, redirecciona a home
-      setSucessfullLogin(true)
+      setSucessfulLogin(true)
       //
   
       } catch {
@@ -54,6 +54,11 @@ const Login = () => {
             error = 'Requerido';
         }
         return error
+    }
+    const loginAsGuest = () => {
+      const token = 'guest'
+      localStorage.setItem('token', token);
+      setSucessfulLogin(true)
     }
 
     return (
@@ -86,8 +91,9 @@ const Login = () => {
       <button type="button" className="btn-close" data-bs-dismiss="alert" 
       aria-label="Close" onClick={() => setErrorMessage(false)}></button>
       </div>}
-      { sucessfullLogin &&
+      { sucessfulLogin &&
         <Redirect to="/" />}
+      <button className="btn btn-dark back" onClick={() => loginAsGuest()}>Ingresar como invitado</button>
     </div>
 )
 }
