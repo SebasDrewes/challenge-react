@@ -93,7 +93,7 @@ const Login = () => {
       </div>}
       { sucessfulLogin &&
         <Redirect to="/" />}
-      <button className="btn btn-dark back" onClick={() => loginAsGuest()}>Ingresar como invitado</button>
+      <button className="btn btn-dark loginAsGuest" onClick={() => loginAsGuest()}>Ingresar como invitado</button>
     </div>
 )
 }

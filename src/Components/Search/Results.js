@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const Results = ({heroes, addHero}) => {
+const Results = ({heroes, addHero, setIsLoading}) => {
   return (
     <div className="searchResults">
       {heroes && heroes.length ? heroes.map(hero => {
@@ -9,7 +9,8 @@ const Results = ({heroes, addHero}) => {
           <div className="heroNameContainer">
             <h1 className="heroName">{hero.name}</h1>
           </div>
-            <img src={hero.image.url} alt={hero.name} draggable={false} className="teamMemberImg"/>
+            <img src={hero.image.url} alt={hero.name} draggable={false} 
+            onLoad={() => setIsLoading(false)} className="teamMemberImg"/>
             <div className="buttons">
             <Link to={`/${hero.id}`}><button className="btn btn-dark btnTeam" >Detalles</button></Link>
             <button className="btn btn-dark btnTeam" onClick={() => addHero(hero)}>Agregar</button>

@@ -10,6 +10,7 @@ const Search = () => {
     const [heroes, setHeroes] = useState(JSON.parse(sessionStorage.getItem('recentSearch')))
     const [validSelection, setValidSelection] = useState(false)
     const [errorMessage, setErrorMessage] = useState('')
+    const [isLoading, setIsLoading] = useState(false)
 
 
     // check if team is already full
@@ -25,6 +26,7 @@ const Search = () => {
 
   const searchHero = async (value) => {
     if (value) {
+    setIsLoading(true);
     const results = await axios.get(`https://www.superheroapi.com/api.php/4333347540058740/search/${value}`)
     // si se encuentran resultados, se muestran
     if(results.data.results){
@@ -70,7 +72,6 @@ const addHero = (hero) => {
             initialValues={{ search: ""}}
             onSubmit={(value) => {searchHero(value.search)}}
           >
-
           <Form className="row g-3 align-items-center searchContainer">
             <div className="col-auto">
               <label htmlFor="search" className="form-label addSuperHero">Agregar SuperHero</label>
@@ -83,7 +84,10 @@ const addHero = (hero) => {
               </div>
             </Form>
           </Formik>
-          <Results heroes={heroes} addHero={addHero}/>
+          <Results heroes={heroes} addHero={addHero} setIsLoading={setIsLoading}/>
+          {isLoading &&
+          <div className="d-flex justify-content-center"><div className="spinner-border" role="status"><span className="sr-only"></span></div></div>
+          }
           
           { errorMessage &&
             <div className="alert alert-danger alert-dismissible fade show alertSearch" 
