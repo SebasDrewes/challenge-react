@@ -37,7 +37,6 @@
     bottom: 10%;
 }
 .btnTeam{
-    width: 9vw;
     font-weight: bold;
     background-color: #212529ce;
 }
@@ -60,4 +59,16 @@
       100% {
         transform: translateY(0);
       }
+}
+@media (max-width: 620px) {
+    #team {
+        min-height: 7vh;
+    }
+    #noTeam {
+        margin: 0;
+        font-size: 1.5em;
+    }
+    body{
+        overflow-x: hidden
+    }
 }

@@ -41,7 +41,7 @@ const Details = ({match}) => {
              <p className="info"><strong>Color de pelo:</strong> {heroDetails.appearance["hair-color"]}</p>
              <p className="info"><strong>Lugar de trabajo:</strong> {heroDetails.work.base}</p>
              </div>
-            </div> : <h1 id="notFound">No encontrado</h1>}
+            </div> : <div className="d-flex justify-content-center"><div className="spinner-border" role="status"><span className="sr-only"></span></div></div>}
             <button className="btn btn-dark back" onClick={() => history.goBack()}>Regresar</button>
         </div>
         );

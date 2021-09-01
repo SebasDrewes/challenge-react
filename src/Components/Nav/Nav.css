@@ -16,3 +16,11 @@ a {
     font-size: 1.5em;
     font-weight: bold;
 }
+@media (max-width: 620px) {
+    #title {
+        font-size: 1em;
+    }
+    .salir {
+        font-size: 1em;
+    }
+}

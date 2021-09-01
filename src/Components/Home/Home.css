@@ -28,6 +28,7 @@
     color: #d1d0d0;
     background-color: rgb(33, 37, 70);
     border: 1px solid #585B5E; 
+    margin-right: 5vw;
     font-size: 1.5em;
     font-weight: bold;
 }
@@ -35,4 +36,23 @@
     color: #ffffff;
     font-weight: bold;
     background-color: rgb(45, 50, 94);
+}
+
+@media (max-width: 1120px) {
+    #home {
+        width: auto;
+    }
+}
+@media (max-width: 750px) {
+    body{
+        overflow-x: hidden
+    }
+    .addHero{
+        font-size: 1em;
+    }
+}
+@media (max-width: 620px) {
+    #teamTitle {
+        display: none;
+    }
 }

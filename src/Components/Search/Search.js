@@ -77,7 +77,7 @@ const addHero = (hero) => {
 
           <Form className="row g-3 align-items-center searchContainer">
             <div className="col-auto">
-              <label htmlFor="search" className="form-label">Buscar SuperHero</label>
+              <label htmlFor="search" className="form-label">Agregar SuperHero</label>
               </div>
               <div className="col-auto">
               <Field name="search" type="text" className="form-control"/>
@@ -90,13 +90,15 @@ const addHero = (hero) => {
           <Results heroes={heroes} addHero={addHero}/>
           
           { errorMessage &&
-            <div className="alert alert-danger alert-dismissible fade show alertSearch" role="alert">
+            <div className="alert alert-danger alert-dismissible fade show alertSearch" 
+            onClick={() => setErrorMessage(false)} role="alert">
             {errorMessage}
             <button type="button" className="btn-close" data-bs-dismiss="alert" 
             aria-label="Close" onClick={() => setErrorMessage('')}></button>
             </div>}
          { validSelection &&
-            <div className="alert alert-success alert-dismissible fade show alertSearch" role="alert">
+            <div className="alert alert-success alert-dismissible fade show alertSearch" 
+            onClick={() => setValidSelection(false)}role="alert">
           Agregado al equipo.
           <button type="button" className="btn-close" data-bs-dismiss="alert" 
             aria-label="Close" onClick={() => setValidSelection(false)}></button>

@@ -27,7 +27,7 @@ const Team = ({team, setTeam}) => {
             <button className="btn btn-dark btnTeam" onClick={() => deleteHero(hero.id)}>Eliminar</button>
             </div>
           </div>)
-      })  :         <h1 id="noTeam">Agrega héroes a tu equipo!</h1>}
+      })  :         <h1 id="noTeam">Agrega heroes a tu equipo!</h1>}
           </div>
     )
 }
