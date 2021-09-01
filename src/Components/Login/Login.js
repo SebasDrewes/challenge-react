@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios';
 import { Redirect } from 'react-router-dom'
 import { Formik, Field, Form } from "formik";
@@ -12,6 +12,13 @@ const Login = () => {
     // si ya esta logeado, carga home
     const token = localStorage.getItem('token')
 
+    
+    //cleanup function
+    useEffect(() => {
+      return () => {
+        setErrorMessage(false)
+      }
+    })
     if(token){
       return <Redirect to="/" />
     }
@@ -31,7 +38,6 @@ const Login = () => {
         setErrorMessage(true)
       }
     }
-
     //validate form functions
     const validateEmail = (value) => {
         let error;
