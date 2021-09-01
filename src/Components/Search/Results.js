@@ -12,7 +12,7 @@ const Results = ({heroes, addHero, setIsLoading}) => {
             <img src={hero.image.url} alt={hero.name} draggable={false} 
             onLoad={() => setIsLoading(false)} className="teamMemberImg"/>
             <div className="buttons">
-            <Link to={`/${hero.id}`}><button className="btn btn-dark btnTeam" >Detalles</button></Link>
+            <Link to={`/search/${hero.id}`}><button className="btn btn-dark btnTeam" >Detalles</button></Link>
             <button className="btn btn-dark btnTeam" onClick={() => addHero(hero)}>Agregar</button>
             </div>
           </div>)

@@ -16,7 +16,7 @@ const Search = () => {
     // check if team is already full
     const team = JSON.parse(localStorage.getItem('team'))
     if(team && team.length === 6) {
-      return <Redirect to="/" />
+      return <Redirect to="/challenge-react" />
     }
     //check if not logged in
     const token = localStorage.getItem('token')

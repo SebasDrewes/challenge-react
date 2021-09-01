@@ -23,7 +23,7 @@ const Team = ({team, setTeam}) => {
             Powerstats
             </button>
             <Powerstat hero={hero} />
-            <Link to={`/${hero.id}`}><button className="btn btn-dark btnTeam" >Detalles</button></Link>
+            <Link to={`challenge-react/${hero.id}`}><button className="btn btn-dark btnTeam" >Detalles</button></Link>
             <button className="btn btn-dark btnTeam" onClick={() => deleteHero(hero.id)}>Eliminar</button>
             </div>
           </div>)

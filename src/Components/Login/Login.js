@@ -20,7 +20,7 @@ const Login = () => {
       }
     })
     if(token){
-      return <Redirect to="/" />
+      return <Redirect to="/challenge-react" />
     }
     //////
 
@@ -92,7 +92,7 @@ const Login = () => {
       aria-label="Close" onClick={() => setErrorMessage(false)}></button>
       </div>}
       { sucessfulLogin &&
-        <Redirect to="/" />}
+        <Redirect to="/challenge-react" />}
       <button className="btn btn-dark loginAsGuest" onClick={() => loginAsGuest()}>Ingresar como invitado</button>
     </div>
 )

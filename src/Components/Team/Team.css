@@ -13,8 +13,8 @@
     width: 350px;
 }
 .teamMemberImg {
-    width: 100%;
     border-radius: 2em;
+    height: 465px;
 }
 .heroNameContainer {
     position: relative;

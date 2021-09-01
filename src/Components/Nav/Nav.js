@@ -8,7 +8,7 @@ const Nav = () => {
     return (
     <nav className="navbar">
         <div className="container-fluid nav">
-            <Link to="/">
+            <Link to="/challenge-react">
                 <h1 id="title">SuperHero App</h1>
             </Link>
             <Link to="/login">
