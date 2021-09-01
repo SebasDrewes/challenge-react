@@ -77,7 +77,7 @@ const addHero = (hero) => {
 
           <Form className="row g-3 align-items-center searchContainer">
             <div className="col-auto">
-              <label htmlFor="search" className="form-label">Agregar SuperHero</label>
+              <label htmlFor="search" className="form-label addSuperHero">Agregar SuperHero</label>
               </div>
               <div className="col-auto">
               <Field name="search" type="text" className="form-control"/>

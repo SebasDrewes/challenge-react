@@ -39,3 +39,17 @@
     width: 100vw;
     top: 0;
 }
+@media (max-width: 1050px) {
+    .addSuperHero{
+        font-size: 1em;
+        text-align: center;
+    }
+    .searchResults {
+        width: auto;
+    }
+}
+@media (max-width: 400px) {
+    .addSuperHero{
+        font-size: 0.5em;
+    }
+}
