@@ -23,7 +23,7 @@
   font-size: 5em;
 }
 .alert-danger{
-  background-color: rgba(139, 60, 60, 0.9);
+  background-color: rgba(139, 60, 60);
   text-align: center;
   border: none;
   color: white;

@@ -37,6 +37,7 @@ const Search = () => {
     setErrorMessage('')
     // si no se encuentran, se muestra error
    } else {
+    setIsLoading(false);
     setErrorMessage('No encontrado')
    }
 }

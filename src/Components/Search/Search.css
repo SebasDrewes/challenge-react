@@ -17,7 +17,7 @@
     border: 1px solid white;
 }
 .alert-success{
-    background-color: rgba(33, 78, 48, 0.7);
+    background-color: rgba(33, 78, 48);
     text-align: center;
     border: none;
     color: white;

@@ -72,12 +72,12 @@ const Login = () => {
           {({ errors, touched }) => (<Form>
           <div className="mb-3">
            <label htmlFor="email" className="form-label">Email</label>
-            <Field name="email" type="email" className="form-control" validate={validateEmail}/>
+            <Field name="email" type="email" className="form-control" id="email" validate={validateEmail}/>
             {errors.email && touched.email ? <div>{errors.email}</div> : null}
             </div>
             <div className="mb-3">
             <label htmlFor="password" className="form-label">Password</label>
-            <Field name="password" type="password" className="form-control" validate={validatePassword}/>
+            <Field name="password" type="password" className="form-control" id="password" validate={validatePassword}/>
             {errors.password && touched.password ? <div>{errors.password}</div> : null}
             </div>
             <button type="submit" className="btn btn-dark">Enviar</button>
