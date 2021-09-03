@@ -1,12 +1,14 @@
 import Nav from '../Nav/Nav'
 import Results from './Results'
 import { useState} from 'react'
-import { Redirect } from 'react-router';
+import { Redirect, useHistory } from 'react-router';
 import { Formik, Field, Form } from "formik";
 import axios from 'axios';
 import {noRepeat, validAlignment} from './ValidHero'
 import './Search.css'
 const Search = () => {
+    const history = useHistory();
+    
     const [heroes, setHeroes] = useState(JSON.parse(sessionStorage.getItem('recentSearch')))
     const [validSelection, setValidSelection] = useState(false)
     const [errorMessage, setErrorMessage] = useState('')
@@ -69,6 +71,7 @@ const addHero = (hero) => {
     return (
         <div>
           <Nav/>
+          <button className="btn btn-dark backToTeam" onClick={() => history.goBack()}>Volver a equipo</button>
           <Formik
             initialValues={{ search: ""}}
             onSubmit={(value) => {searchHero(value.search)}}

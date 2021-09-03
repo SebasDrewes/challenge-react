@@ -39,6 +39,9 @@
     width: 100vw;
     top: 0;
 }
+.backToTeam {
+    font-weight: bold;
+}
 @media (max-width: 1050px) {
     .addSuperHero{
         font-size: 1em;
@@ -46,6 +49,11 @@
     }
     .searchResults {
         width: auto;
+    }
+}
+@media (max-width: 620px) {
+    .backToTeam {
+        display: none;
     }
 }
 @media (max-width: 400px) {
