@@ -5,16 +5,23 @@ const Stats = ({team}) => {
     let [totalPeso, totalAltura, totalCombate, totalDurabilidad, totalInteligencia,
     totalPoder, totalVelocidad, totalFuerza]  = Array(8).fill(0)
 
+    //si la api no trae data, no la suma
+    const validStat = (powerStat) => {
+        if(isNaN(powerStat)) {
+            return 0
+        } return powerStat
+    }
+
     //sumatoria de statss
     team.forEach(hero => {
-        totalPeso += parseInt(hero.appearance.weight[1])
-        totalAltura += parseInt(hero.appearance.height[1])
-        totalCombate += parseInt(hero.powerstats.combat);
-        totalDurabilidad += parseInt(hero.powerstats.durability);
-        totalInteligencia += parseInt(hero.powerstats.intelligence);
-        totalPoder += parseInt(hero.powerstats.power);
-        totalVelocidad += parseInt(hero.powerstats.speed);
-        totalFuerza += parseInt(hero.powerstats.strength);
+        totalPeso += validStat(parseInt(hero.appearance.weight[1]));
+        totalAltura += validStat(parseInt(hero.appearance.height[1]));
+        totalCombate += validStat(parseInt(hero.powerstats.combat));
+        totalDurabilidad += validStat(parseInt(hero.powerstats.durability));
+        totalInteligencia += validStat(parseInt(hero.powerstats.intelligence));
+        totalPoder += validStat(parseInt(hero.powerstats.power));
+        totalVelocidad += validStat(parseInt(hero.powerstats.speed));
+        totalFuerza += validStat(parseInt(hero.powerstats.strength));
     })
 
     const highestStat = Math.max(totalCombate, totalDurabilidad, totalInteligencia,
