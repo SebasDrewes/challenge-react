@@ -20,7 +20,7 @@ Crea tu propio equipo de superheroes, eligiendo de los resultados obtenidos de S
 ```
 git clone https://github.com/SebasDrewes/challenge-react/
 
-cd react-challenge
+cd challenge-react
 
 npm install
 
