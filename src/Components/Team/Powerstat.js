@@ -8,7 +8,6 @@ const Powerstat = ({hero}) => {
             return powerStat
         } return 'No Disponible'
     }
-    console.log(hero)
     return (
         <ul className="dropdown-menu powerStatDropdown">
         <div className="progress-bar" role="progressbar" 
