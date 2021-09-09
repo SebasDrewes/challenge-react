@@ -1,7 +1,6 @@
 import './Powerstat.css'
 
 const Powerstat = ({hero}) => {
-
     // si la api no trae data, devuelve no disponible
     const validStat = (powerStat) => {
         if(powerStat !== 'null') {
