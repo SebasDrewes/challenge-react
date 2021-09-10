@@ -58,9 +58,9 @@ describe('Validacion de campos en submit de formulario de login o busqueda', () 
         });
     test('Muestra error si se deja campo vacio Password', async () => {
       render(<Login/>)
-      const emailInput = screen.getByLabelText(/password/i);
+      const passwordInput = screen.getByLabelText(/password/i);
       
-      fireEvent.blur(emailInput);
+      fireEvent.blur(passwordInput);
       await screen.findByText("Requerido");
       });
 
