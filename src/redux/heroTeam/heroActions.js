@@ -4,12 +4,12 @@ import { REMOVE_HERO } from "./heroTypes";
 export const addHero = (hero) => {
   return {
     type: ADD_HERO,
-    hero: hero,
+    payload: hero,
   };
 };
 export const removeHero = (hero) => {
   return {
     type: REMOVE_HERO,
-    hero: hero,
+    payload: hero,
   };
 };

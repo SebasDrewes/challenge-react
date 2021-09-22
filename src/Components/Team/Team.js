@@ -4,7 +4,7 @@ import { removeHero } from '../../redux'
 import Powerstat from "./Powerstat";
 import "./Team.css";
 const Team = () => {
-  const heroTeam = useSelector(state => state.heroTeam)
+  const heroTeam = useSelector(state => state.hero.heroTeam)
   const dispatch = useDispatch()
 
   return (

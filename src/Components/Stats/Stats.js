@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import "./Stats.css";
 
 const Stats = () => {
-  const heroTeam = useSelector((state) => state.heroTeam);
+  const heroTeam = useSelector((state) => state.hero.heroTeam);
   let [
     totalPeso,
     totalAltura,

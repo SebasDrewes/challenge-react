@@ -9,12 +9,17 @@ import axios from "axios";
 import { noRepeat, validAlignment } from "./ValidHero";
 import "./Search.css";
 const Search = () => {
+  //history para boton regresar
   const history = useHistory();
-  const heroTeam = useSelector((state) => state.heroTeam);
+  //redux hooks
+  const heroTeam = useSelector((state) => state.hero.heroTeam);
   const dispatch = useDispatch();
+
   const [heroes, setHeroes] = useState(
     JSON.parse(sessionStorage.getItem("recentSearch"))
   );
+
+  //mensaje error y carga
   const [validSelection, setValidSelection] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -32,6 +37,8 @@ const Search = () => {
   const searchHero = async (value) => {
     if (value) {
       setIsLoading(true);
+
+      setHeroes([])
       const results = await axios.get(
         `https://www.superheroapi.com/api.php/4333347540058740/search/${value}`
       );

@@ -5,16 +5,15 @@ const initialState = {
   heroTeam: [],
 };
 const heroReducer = (state = initialState, action) => {
-  switch (action.type) {
+  const {type, payload} = action
+  switch (type) {
     case ADD_HERO:
       return {
-        ...state,
-        heroTeam: state.heroTeam.concat(action.hero),
+        heroTeam: state.heroTeam.concat(payload),
       };
     case REMOVE_HERO:
       return {
-        ...state,
-        heroTeam: state.heroTeam.filter((hero) => hero.id !== action.hero.id),
+        heroTeam: state.heroTeam.filter((hero) => hero.id !== payload.id),
       };
     default:
       return state;

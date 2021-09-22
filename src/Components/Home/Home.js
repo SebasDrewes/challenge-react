@@ -5,7 +5,7 @@ import Stats from '../Stats/Stats'
 import Team from '../Team/Team'
 import './Home.css'
 const Home = () => {
-  const heroTeam = useSelector(state => state.heroTeam)
+  const heroTeam = useSelector(state => state.hero.heroTeam)
   const token = localStorage.getItem('token')
   //borra recentSearch al cargar home
   sessionStorage.removeItem('recentSearch')
