@@ -38,10 +38,45 @@ describe("Verificacion de usuario autenticado al ingresar a una ruta", () => {
 describe("Validacion de campos en submit de formulario de login o busqueda", () => {
   test("Muestra error si se deja campo vacio Email o si se ingresa Email invalido", async () => {
     //se elimina token de test anterior//
+<<<<<<< HEAD
     localStorage.removeItem("token");
     render(<Login />);
     // requerido
     const emailInput = screen.getByLabelText(/email/i);
+=======
+    localStorage.removeItem('token');
+    render(<Login/>)
+      // requerido
+      const emailInput = screen.getByLabelText(/email/i);
+
+      fireEvent.blur(emailInput);
+      await screen.findByText("Requerido");
+
+      // email invalido
+      userEvent.type(emailInput, "test");
+          fireEvent.blur(emailInput);
+          await screen.findByText("Email invalido");
+    
+          userEvent.clear(emailInput);
+    
+    
+          userEvent.type(emailInput, "challenge@alkemy.org");
+          
+          await waitForElementToBeRemoved(() =>
+            screen.getByText("Email invalido")
+          );
+    
+        });
+    test('Muestra error si se deja campo vacio Password', async () => {
+      render(<Login/>)
+      const passwordInput = screen.getByLabelText(/password/i);
+      
+      fireEvent.blur(passwordInput);
+      await screen.findByText("Requerido");
+      });
+
+describe('Manejo de excepciones al obtener errores de la API', () => {
+>>>>>>> 9217190eb0002986d6adf747a68f1342e6ac2a12
 
     fireEvent.blur(emailInput);
     await screen.findByText("Requerido");
@@ -100,5 +135,10 @@ describe("Validacion de campos en submit de formulario de login o busqueda", () 
 
       await screen.findByText("No encontrado");
     });
+<<<<<<< HEAD
   });
 });
+=======
+    });
+  })
+>>>>>>> 9217190eb0002986d6adf747a68f1342e6ac2a12

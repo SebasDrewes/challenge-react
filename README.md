@@ -1,7 +1,7 @@
 # challenge-react
 ![preview](https://user-images.githubusercontent.com/81722772/131942689-7b6fddda-2602-4c37-89ca-6817d5d1f220.jpg)
 
-**SuperHero App desarrollada con React.js para Alkemy.org**
+**SuperHero App desarrollada con React para Alkemy.org, segun los requisitos de: [Challenge React](https://drive.google.com/file/d/1kNbni3fBBYiAErWYIQNmlggJTNHmLgPL/view)**
 
 Crea tu propio equipo de superheroes, eligiendo de los resultados obtenidos de SuperHeroAPI.
 
