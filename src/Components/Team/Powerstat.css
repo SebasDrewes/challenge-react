@@ -1,33 +1,33 @@
-.powerStatDropdown{
-    background-color: #14171ae0;
-    width: 280px;
-    padding: 0;
-    border-radius: 0.5em;
-    position: absolute;
-    inset: auto auto 0px 0px!important;
-    margin: 0px;
-    transform: translate(0px, -40px)!important;
+.powerStatDropdown {
+  background-color: #14171ae0;
+  width: 280px;
+  padding: 0;
+  border-radius: 0.5em;
+  position: absolute;
+  inset: auto auto 0px 0px !important;
+  margin: 0px;
+  transform: translate(0px, -40px) !important;
 }
-.powerstat{
-    text-align: start;
-    color: white;
-    margin: 5px;
-    font-size: 1.5em;
+.powerstat {
+  text-align: start;
+  color: white;
+  margin: 5px;
+  font-size: 1.5em;
 }
 .progress-bar {
-    overflow: visible;
-    margin-bottom: 2px;
-    background-color: rgba(77, 77, 114);
-    border-radius: 0.1em;
-    animation: opacity 2s;
-    animation-iteration-count: initial;
+  overflow: visible;
+  margin-bottom: 2px;
+  background-color: rgba(77, 77, 114);
+  border-radius: 0.1em;
+  animation: opacity 2s;
+  animation-iteration-count: initial;
 }
-  
-  @keyframes opacity {
-    0% {
-        opacity: 0;
-    }
-      100% {
-        opacity: 1;
-      }
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

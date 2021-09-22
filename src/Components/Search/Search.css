@@ -1,63 +1,63 @@
 .searchContainer {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50vw;
-    display: flex;
-    justify-content: center;
-    font-size: 2.5em;
-    border-radius: 3em;
-    flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  font-size: 2.5em;
+  border-radius: 3em;
+  flex-direction: row;
 }
 .heroCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid white;
 }
-.alert-success{
-    background-color: rgba(33, 78, 48);
-    text-align: center;
-    border: none;
-    color: white;
-    font-size: 1.5em;
+.alert-success {
+  background-color: rgba(33, 78, 48);
+  text-align: center;
+  border: none;
+  color: white;
+  font-size: 1.5em;
 }
 .searchResults {
-    margin-top: 5vh;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #212529fd;
-    width: 90vw;
-    display: flex;
-    border-radius: 3em;
-    justify-content: center;
-    flex-wrap: wrap;
+  margin-top: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #212529fd;
+  width: 90vw;
+  display: flex;
+  border-radius: 3em;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-.alertSearch{
-    position: fixed;
-    width: 100vw;
-    top: 0;
+.alertSearch {
+  position: fixed;
+  width: 100vw;
+  top: 0;
 }
 .backToTeam {
-    font-weight: bold;
+  font-weight: bold;
 }
 @media (max-width: 1050px) {
-    .addSuperHero{
-        font-size: 1em;
-        text-align: center;
-    }
-    .searchResults {
-        width: auto;
-    }
+  .addSuperHero {
+    font-size: 1em;
+    text-align: center;
+  }
+  .searchResults {
+    width: auto;
+  }
 }
 @media (max-width: 620px) {
-    .backToTeam {
-        display: none;
-    }
+  .backToTeam {
+    display: none;
+  }
 }
 @media (max-width: 400px) {
-    .addSuperHero{
-        font-size: 0.5em;
-    }
+  .addSuperHero {
+    font-size: 0.5em;
+  }
 }
