@@ -2,7 +2,7 @@ import Nav from "../Nav/Nav";
 import Results from "./Results";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addHero } from "../../redux/heroTeam/heroActions";
+import { addHero } from '../../redux'
 import { Redirect, useHistory } from "react-router";
 import { Formik, Field, Form } from "formik";
 import axios from "axios";

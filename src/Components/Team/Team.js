@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
-import { removeHero } from "../../redux/heroTeam/heroActions";
+import { removeHero } from '../../redux'
 import Powerstat from "./Powerstat";
 import "./Team.css";
 const Team = () => {
