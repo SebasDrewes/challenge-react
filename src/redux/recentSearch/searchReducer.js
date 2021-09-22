@@ -4,11 +4,11 @@ const initialState = {
   recentSearch: [],
 };
 const searchReducer = (state = initialState, action) => {
-  const {type, payload} = action
+  const { type, payload } = action;
   switch (type) {
     case UPDATE_RECENT_SEARCH:
       return {
-        recentSearch: payload
+        recentSearch: payload,
       };
     default:
       return state;

@@ -1,7 +1,6 @@
 import { UPDATE_RECENT_SEARCH } from "./searchTypes";
 
-
-export const recentSearch = (heroes) => {
+export const updateRecentSearch = (heroes) => {
   return {
     type: UPDATE_RECENT_SEARCH,
     payload: heroes,

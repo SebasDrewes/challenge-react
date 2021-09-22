@@ -2,7 +2,7 @@ import Nav from "../Nav/Nav";
 import Results from "./Results";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addHero } from '../../redux'
+import { addHero, updateRecentSearch } from "../../redux";
 import { Redirect, useHistory } from "react-router";
 import { Formik, Field, Form } from "formik";
 import axios from "axios";
@@ -13,11 +13,8 @@ const Search = () => {
   const history = useHistory();
   //redux hooks
   const heroTeam = useSelector((state) => state.hero.heroTeam);
+  const recentSearch = useSelector((state) => state.search.recentSearch);
   const dispatch = useDispatch();
-
-  const [heroes, setHeroes] = useState(
-    JSON.parse(sessionStorage.getItem("recentSearch"))
-  );
 
   //mensaje error y carga
   const [validSelection, setValidSelection] = useState(false);
@@ -37,17 +34,13 @@ const Search = () => {
   const searchHero = async (value) => {
     if (value) {
       setIsLoading(true);
-
-      setHeroes([])
       const results = await axios.get(
         `https://www.superheroapi.com/api.php/4333347540058740/search/${value}`
       );
       // si se encuentran resultados, se muestran
       if (results.data.results) {
-        let recentSearch = results.data.results;
-        setHeroes(recentSearch);
-        // logica para guardar ultima busqueda en sessionStorage, para redisplay en caso de ver detalles
-        sessionStorage.setItem("recentSearch", JSON.stringify(recentSearch));
+        let search = results.data.results;
+        dispatch(updateRecentSearch(search));
         setErrorMessage("");
         // si no se encuentran, se muestra error
       } else {
@@ -72,7 +65,7 @@ const Search = () => {
 
     if (noRepeat(heroTeam, hero) && validAlignment(heroTeam, hero)) {
       setValidSelection(true);
-      dispatch(addHero(hero))
+      dispatch(addHero(hero));
     } else {
       setValidSelection(false);
     }
@@ -108,7 +101,11 @@ const Search = () => {
           </div>
         </Form>
       </Formik>
-      <Results heroes={heroes} validateAddedHero={validateAddedHero} setIsLoading={setIsLoading} />
+      <Results
+        recentSearch={recentSearch}
+        validateAddedHero={validateAddedHero}
+        setIsLoading={setIsLoading}
+      />
       {isLoading && (
         <div className="d-flex justify-content-center">
           <div className="spinner-border" role="status">

@@ -5,7 +5,7 @@ const initialState = {
   heroTeam: [],
 };
 const heroReducer = (state = initialState, action) => {
-  const {type, payload} = action
+  const { type, payload } = action;
   switch (type) {
     case ADD_HERO:
       return {

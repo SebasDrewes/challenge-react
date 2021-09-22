@@ -1,14 +1,17 @@
 import { Redirect, Link } from 'react-router-dom';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { updateRecentSearch } from "../../redux";
 import Nav from '../Nav/Nav'
 import Stats from '../Stats/Stats'
 import Team from '../Team/Team'
 import './Home.css'
 const Home = () => {
   const heroTeam = useSelector(state => state.hero.heroTeam)
-  const token = localStorage.getItem('token')
   //borra recentSearch al cargar home
-  sessionStorage.removeItem('recentSearch')
+  const dispatch = useDispatch();
+  dispatch(updateRecentSearch([]))
+
+  const token = localStorage.getItem('token')
   if(!token){
     return <Redirect to="/login" />
   }

@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 
-const Results = ({ heroes, validateAddedHero, setIsLoading }) => {
+const Results = ({ recentSearch, validateAddedHero, setIsLoading }) => {
+  console.log(recentSearch)
   return (
     <div className="searchResults">
-      {heroes && heroes.length
-        ? heroes.map((hero) => {
+      {recentSearch && recentSearch.length
+        ? recentSearch.map((hero) => {
             return (
               <div key={`team${hero.id}`} className="teamMember">
                 <div className="heroNameContainer">
