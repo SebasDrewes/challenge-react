@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux'
 import Powerstat from "./Powerstat";
 import "./Team.css";
 const Team = ({ team, setTeam }) => {
+  const heroTeam = useSelector(state => state.heroTeam)
+  const dispatch = useDispatch()
   const deleteHero = (id) => {
     const newTeam = team.filter((hero) => hero.id !== id);
     setTeam(newTeam);
@@ -38,7 +41,7 @@ const Team = ({ team, setTeam }) => {
                 </Link>
                 <button
                   className="btn btn-dark btnTeam"
-                  onClick={() => deleteHero(hero.id)}
+                  onClick={() => dispatch(deleteHero(hero.id))}
                 >
                   Eliminar
                 </button>
