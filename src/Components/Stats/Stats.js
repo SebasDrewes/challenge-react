@@ -1,6 +1,8 @@
+import { useSelector } from "react-redux";
 import "./Stats.css";
 
-const Stats = ({ team }) => {
+const Stats = () => {
+  const heroTeam = useSelector((state) => state.heroTeam);
   let [
     totalPeso,
     totalAltura,
@@ -21,7 +23,7 @@ const Stats = ({ team }) => {
   };
 
   //sumatoria de statss
-  team.forEach((hero) => {
+  heroTeam.forEach((hero) => {
     totalPeso += validStat(parseInt(hero.appearance.weight[1]));
     totalAltura += validStat(parseInt(hero.appearance.height[1]));
     totalCombate += validStat(parseInt(hero.powerstats.combat));
@@ -86,11 +88,11 @@ const Stats = ({ team }) => {
         <div className="row">
           <p className="col">
             <strong>Peso promedio: </strong>
-            {`${Math.round(totalPeso / team.length)} kg`}
+            {`${Math.round(totalPeso / heroTeam.length)} kg`}
           </p>
           <p className="col">
             <strong>Altura promedio: </strong>
-            {`${Math.round(totalAltura / team.length)} cm`}
+            {`${Math.round(totalAltura / heroTeam.length)} cm`}
           </p>
         </div>
         <div className="row">

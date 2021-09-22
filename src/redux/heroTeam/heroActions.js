@@ -8,8 +8,8 @@ export const addHero = (hero) => {
   };
 };
 export const removeHero = (hero) => {
-    return {
-        type: REMOVE_HERO,
-        hero: hero,
-    }
-}
+  return {
+    type: REMOVE_HERO,
+    hero: hero,
+  };
+};

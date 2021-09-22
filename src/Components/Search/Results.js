@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Results = ({ heroes, addHero, setIsLoading }) => {
+const Results = ({ heroes, validateAddedHero, setIsLoading }) => {
   return (
     <div className="searchResults">
       {heroes && heroes.length
@@ -23,7 +23,7 @@ const Results = ({ heroes, addHero, setIsLoading }) => {
                   </Link>
                   <button
                     className="btn btn-dark btnTeam"
-                    onClick={() => addHero(hero)}
+                    onClick={() => validateAddedHero(hero)}
                   >
                     Agregar
                   </button>

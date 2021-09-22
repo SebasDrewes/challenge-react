@@ -1,20 +1,16 @@
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
+import { removeHero } from "../../redux/heroTeam/heroActions";
 import Powerstat from "./Powerstat";
 import "./Team.css";
-const Team = ({ team, setTeam }) => {
+const Team = () => {
   const heroTeam = useSelector(state => state.heroTeam)
   const dispatch = useDispatch()
-  const deleteHero = (id) => {
-    const newTeam = team.filter((hero) => hero.id !== id);
-    setTeam(newTeam);
-    localStorage.setItem("team", JSON.stringify(newTeam));
-  };
 
   return (
     <div id="team">
-      {team && team.length ? (
-        team.map((hero) => {
+      {heroTeam && heroTeam.length ? (
+        heroTeam.map((hero) => {
           return (
             <div key={`team${hero.id}`} className="teamMember">
               <div className="heroNameContainer">
@@ -41,7 +37,7 @@ const Team = ({ team, setTeam }) => {
                 </Link>
                 <button
                   className="btn btn-dark btnTeam"
-                  onClick={() => dispatch(deleteHero(hero.id))}
+                  onClick={() => dispatch(removeHero(hero))}
                 >
                   Eliminar
                 </button>

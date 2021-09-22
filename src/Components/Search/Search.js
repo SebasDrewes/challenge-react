@@ -1,6 +1,8 @@
 import Nav from "../Nav/Nav";
 import Results from "./Results";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { addHero } from "../../redux/heroTeam/heroActions";
 import { Redirect, useHistory } from "react-router";
 import { Formik, Field, Form } from "formik";
 import axios from "axios";
@@ -8,7 +10,8 @@ import { noRepeat, validAlignment } from "./ValidHero";
 import "./Search.css";
 const Search = () => {
   const history = useHistory();
-
+  const heroTeam = useSelector((state) => state.heroTeam);
+  const dispatch = useDispatch();
   const [heroes, setHeroes] = useState(
     JSON.parse(sessionStorage.getItem("recentSearch"))
   );
@@ -17,8 +20,7 @@ const Search = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   // check if team is already full
-  const team = JSON.parse(localStorage.getItem("team"));
-  if (team && team.length === 6) {
+  if (heroTeam && heroTeam.length === 6) {
     return <Redirect to="/challenge-react" />;
   }
   //check if not logged in
@@ -48,29 +50,22 @@ const Search = () => {
     }
   };
   // funcion para guardar heroes seleccionados en localStorage
-  const addHero = (hero) => {
+  const validateAddedHero = (hero) => {
     if (errorMessage) {
       setErrorMessage("");
     }
-    let team;
-    if (localStorage.getItem("team") === null) {
-      team = [];
-    } else {
-      team = JSON.parse(localStorage.getItem("team"));
-    }
     // asignacion de valor error message
-    validAlignment(team, hero) ||
+    validAlignment(heroTeam, hero) ||
       setErrorMessage(
         "No podés elegir más de tres héroes de la misma alineación."
       );
 
-    noRepeat(team, hero) ||
+    noRepeat(heroTeam, hero) ||
       setErrorMessage("No podés elegir el mismo héroe más de una vez.");
 
-    if (noRepeat(team, hero) && validAlignment(team, hero)) {
+    if (noRepeat(heroTeam, hero) && validAlignment(heroTeam, hero)) {
       setValidSelection(true);
-      team.push(hero);
-      localStorage.setItem("team", JSON.stringify(team));
+      dispatch(addHero(hero))
     } else {
       setValidSelection(false);
     }
@@ -106,7 +101,7 @@ const Search = () => {
           </div>
         </Form>
       </Formik>
-      <Results heroes={heroes} addHero={addHero} setIsLoading={setIsLoading} />
+      <Results heroes={heroes} validateAddedHero={validateAddedHero} setIsLoading={setIsLoading} />
       {isLoading && (
         <div className="d-flex justify-content-center">
           <div className="spinner-border" role="status">
