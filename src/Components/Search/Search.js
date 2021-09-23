@@ -28,6 +28,7 @@ const Search = () => {
 
   const searchHero = async (value) => {
     if (value) {
+      dispatch(updateRecentSearch([]));
       setIsLoading(true);
       const results = await axios.get(
         `https://www.superheroapi.com/api.php/4333347540058740/search/${value}`
@@ -65,6 +66,7 @@ const Search = () => {
       setValidSelection(false);
     }
   };
+
   return (
     <div>
       <Nav />

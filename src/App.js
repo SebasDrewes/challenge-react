@@ -15,7 +15,7 @@ function App() {
           <Route
             exact
             path="/login"
-            render={(token) => <Login token={token} />}
+            render={(token) => <Login {...token} />}
           />
           <PrivateRoute
             token={token}

@@ -1,69 +1,69 @@
 #detailsCard {
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #212529;
-    width: 70vw;
-    display: flex;
-    border-radius: 3em;
-    align-self: center;
-    flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #212529;
+  width: 70vw;
+  display: flex;
+  border-radius: 3em;
+  align-self: center;
+  flex-direction: row;
 }
 #detailsImg {
-    max-width: 400px;
-    height: 450px;
-    border-radius: 3em 0 0 3em;
-    border-right: 1px solid #585B5E; 
+  max-width: 400px;
+  height: 450px;
+  border-radius: 3em 0 0 3em;
+  border-right: 1px solid #585b5e;
 }
 #details {
-    padding-left: 2vw;
+  padding-left: 2vw;
 }
 #heroTitle {
-    margin: 0;
-    padding-top: 1vw;
-    padding-left: 2vw;
-    font-size: 3em;
-    text-align: center;
-    font-weight: bold;
+  margin: 0;
+  padding-top: 1vw;
+  padding-left: 2vw;
+  font-size: 3em;
+  text-align: center;
+  font-weight: bold;
 }
 .info {
-    font-size: 1.1em;
+  font-size: 1.1em;
 }
-    .back {
-        position: absolute;
-        left: 3vw;
-        bottom: 3vw;
-        font-size: 1.5em;
-        font-weight: bold;
-    }
+.back {
+  position: absolute;
+  left: 3vw;
+  bottom: 3vw;
+  font-size: 1.5em;
+  font-weight: bold;
+}
 
-.spinner-border{
-    width: 15em;
-    margin-top: 20vh;
-    height: 15em;
-    text-align: center;
+.spinner-border {
+  width: 15em;
+  margin-top: 20vh;
+  height: 15em;
+  text-align: center;
 }
 @media (max-width: 1050px) {
-    #detailsCard {
-        width: 100vw;
-    }
+  #detailsCard {
+    width: 100vw;
+  }
 }
 @media (max-width: 970px) {
-    .back {
-        bottom: 0vw;
-    }
+  .back {
+    bottom: 0vw;
+  }
 }
 @media (max-width: 750px) {
-    #detailsImg {
-        width:200px;
-        height: 200px
-    }
+  #detailsImg {
+    width: 200px;
+    height: 200px;
+  }
 }
 @media (max-width: 500px) {
-    .info {
-        font-size: 0.8em;
-    }
-    #detailsCard {
-        margin-top:8vh;
-        height: auto;
-    }
+  .info {
+    font-size: 0.8em;
+  }
+  #detailsCard {
+    margin-top: 8vh;
+    height: auto;
+  }
 }
