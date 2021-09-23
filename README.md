@@ -5,6 +5,8 @@
 
 Crea tu propio equipo de superheroes, eligiendo de los resultados obtenidos de SuperHeroAPI.
 
+• Para el manejo de estados entre componentes, se utilizo **React-Redux**
+
 • Para el manejo de peticiones HTTP se utilizo la libreria **Axios**.
 
 • Para las validaciones del formulario de Login y Search, se utilizo la libreria **Formik**.
