@@ -25,11 +25,6 @@ const Search = () => {
   if (heroTeam && heroTeam.length === 6) {
     return <Redirect to="/challenge-react" />;
   }
-  //check if not logged in
-  const token = localStorage.getItem("token");
-  if (!token) {
-    return <Redirect to="/login" />;
-  }
 
   const searchHero = async (value) => {
     if (value) {

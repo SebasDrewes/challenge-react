@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const Results = ({ recentSearch, validateAddedHero, setIsLoading }) => {
-  console.log(recentSearch)
   return (
     <div className="searchResults">
       {recentSearch && recentSearch.length
