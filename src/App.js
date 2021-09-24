@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 
 function App() {
-  const token = localStorage.getItem("token");
   return (
     <div className="app">
       <Router>
@@ -15,27 +14,23 @@ function App() {
           <Route
             exact
             path="/login"
-            render={(token) => <Login {...token} />}
+            component={Login}
           />
           <PrivateRoute
-            token={token}
             path={"/challenge-react"}
             exact
             component={Home}
           />
           <PrivateRoute
-            token={token}
             path={"/search"}
             exact
             component={Search}
           />
           <PrivateRoute
-            token={token}
             path={"/search/:id"}
             component={Details}
           />
           <PrivateRoute
-            token={token}
             path={"/challenge-react/:id"}
             component={Details}
           />

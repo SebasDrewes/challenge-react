@@ -1,7 +1,8 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
-const PrivateRoute = ({ token, path, exact, component }) => {
+const PrivateRoute = ({ path, exact, component }) => {
+  const token = localStorage.getItem("token");
   return token ? (
     <Route path={path} exact={exact} component={component} />
   ) : (

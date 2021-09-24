@@ -1,26 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import { Formik, Field, Form } from "formik";
 import "./Login.css";
 
-const Login = ({token}) => {
+const Login = () => {
   //state
   const [errorMessage, setErrorMessage] = useState(false);
   const [sucessfulLogin, setSucessfulLogin] = useState(false);
 
-  //cleanup function
-  useEffect(() => {
-    return () => {
-      setSucessfulLogin(false);
-    };
-  });
   // si ya esta logeado, carga home
+  const token = localStorage.getItem("token");
   if (token) {
     return <Redirect to="/challenge-react" />;
   }
-  //////
-
   //fetch token function
   const ValidateLogin = async (credentials) => {
     try {
