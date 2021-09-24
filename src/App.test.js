@@ -1,4 +1,6 @@
 import React from "react";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 import { BrowserRouter } from "react-router-dom";
 import {
   render,
@@ -7,6 +9,7 @@ import {
   fireEvent,
 } from "@testing-library/react";
 import { enableFetchMocks } from "jest-fetch-mock";
+import PrivateRoute from "./Components/PrivateRoute";
 import Login from "./Components/Login/Login";
 import userEvent from "@testing-library/user-event";
 import Home from "./Components/Home/Home";
@@ -18,7 +21,9 @@ describe("Verificacion de usuario autenticado al ingresar a una ruta", () => {
   test("No carga home si no hay un token localStorage", () => {
     const { queryByTestId } = render(
       <BrowserRouter>
-        <Home />
+        <Provider store={store}>
+          <PrivateRoute component={Home} />
+        </Provider>
       </BrowserRouter>
     );
     expect(queryByTestId("home")).toBeFalsy();
@@ -28,7 +33,9 @@ describe("Verificacion de usuario autenticado al ingresar a una ruta", () => {
     localStorage.setItem("token", "token");
     const { getByTestId } = render(
       <BrowserRouter>
-        <Home />
+        <Provider store={store}>
+          <PrivateRoute component={Home} />
+        </Provider>
       </BrowserRouter>
     );
     expect(getByTestId("home")).toBeTruthy();
@@ -38,45 +45,10 @@ describe("Verificacion de usuario autenticado al ingresar a una ruta", () => {
 describe("Validacion de campos en submit de formulario de login o busqueda", () => {
   test("Muestra error si se deja campo vacio Email o si se ingresa Email invalido", async () => {
     //se elimina token de test anterior//
-<<<<<<< HEAD
     localStorage.removeItem("token");
     render(<Login />);
     // requerido
     const emailInput = screen.getByLabelText(/email/i);
-=======
-    localStorage.removeItem('token');
-    render(<Login/>)
-      // requerido
-      const emailInput = screen.getByLabelText(/email/i);
-
-      fireEvent.blur(emailInput);
-      await screen.findByText("Requerido");
-
-      // email invalido
-      userEvent.type(emailInput, "test");
-          fireEvent.blur(emailInput);
-          await screen.findByText("Email invalido");
-    
-          userEvent.clear(emailInput);
-    
-    
-          userEvent.type(emailInput, "challenge@alkemy.org");
-          
-          await waitForElementToBeRemoved(() =>
-            screen.getByText("Email invalido")
-          );
-    
-        });
-    test('Muestra error si se deja campo vacio Password', async () => {
-      render(<Login/>)
-      const passwordInput = screen.getByLabelText(/password/i);
-      
-      fireEvent.blur(passwordInput);
-      await screen.findByText("Requerido");
-      });
-
-describe('Manejo de excepciones al obtener errores de la API', () => {
->>>>>>> 9217190eb0002986d6adf747a68f1342e6ac2a12
 
     fireEvent.blur(emailInput);
     await screen.findByText("Requerido");
@@ -122,7 +94,9 @@ describe('Manejo de excepciones al obtener errores de la API', () => {
       localStorage.setItem("token", "token");
       render(
         <BrowserRouter>
-          <Search />
+          <Provider store={store}>
+            <Search />
+          </Provider>
         </BrowserRouter>
       );
 
@@ -135,10 +109,5 @@ describe('Manejo de excepciones al obtener errores de la API', () => {
 
       await screen.findByText("No encontrado");
     });
-<<<<<<< HEAD
   });
 });
-=======
-    });
-  })
->>>>>>> 9217190eb0002986d6adf747a68f1342e6ac2a12
