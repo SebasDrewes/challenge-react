@@ -12,8 +12,8 @@ function App() {
       <Router>
         <Switch>
           <Route
-            exact
             path="/login"
+            exact
             component={Login}
           />
           <PrivateRoute

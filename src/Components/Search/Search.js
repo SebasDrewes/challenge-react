@@ -45,7 +45,7 @@ const Search = () => {
       }
     }
   };
-  // funcion para guardar heroes seleccionados en localStorage
+  // funcion para validar heroe seleccionado
   const validateAddedHero = (hero) => {
     if (errorMessage) {
       setErrorMessage("");

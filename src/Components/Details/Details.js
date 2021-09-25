@@ -1,11 +1,10 @@
 import Nav from "../Nav/Nav";
-import { Redirect, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Details.css";
 const Details = ({ match }) => {
   const history = useHistory();
-  const token = localStorage.getItem("token");
   const [heroDetails, setHeroDetails] = useState([]);
 
   useEffect(() => {
@@ -19,10 +18,6 @@ const Details = ({ match }) => {
     );
     setHeroDetails(fetchedData.data);
   };
-
-  if (!token) {
-    return <Redirect to="/login" />;
-  }
 
   return (
     <div>
